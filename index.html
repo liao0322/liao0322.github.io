@@ -420,11 +420,15 @@
 
       
         
-          
-            <p>这是一段 OC 的代码：</p>
+          <p>这是一段 OC 的代码：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)getInventoryAssetsWithOrderNo:(<span class="built_in">NSString</span> *)orderNo</span><br><span class="line">                             callBack:(IDCallback)callBack &#123;</span><br><span class="line">    <span class="built_in">NSDictionary</span> *params = @&#123;</span><br><span class="line">                             <span class="string">@"buyerId"</span>: [<span class="keyword">self</span> buyerId],</span><br><span class="line">                             <span class="string">@"orderNo"</span>: orderNo</span><br><span class="line">                             &#125;;</span><br><span class="line">    [[FLHTTPClient sharedClient] POST:[FLServerURL getInventoryAssets] body:params callback:^(ServerResponse *response, <span class="built_in">NSError</span> *error) &#123;</span><br><span class="line">        <span class="keyword">if</span> (error &amp;&amp; callBack) &#123;</span><br><span class="line">            callBack(<span class="literal">nil</span>, error);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (callBack) &#123;</span><br><span class="line">            FLInventoryAssetsModel *model = [FLInventoryAssetsModel mj_objectWithKeyValues:response.result];</span><br><span class="line">            callBack(model, <span class="literal">nil</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/03/OC代码Test/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
