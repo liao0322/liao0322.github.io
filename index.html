@@ -329,6 +329,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/08/Python-基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="廖若星辰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World!">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/08/Python-基础/" itemprop="url">Python 基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T11:59:06+08:00">2018-02-08</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-08T19:15:42+08:00">2018-02-08</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/08/Python-基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/08/Python-基础/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/02/08/Python-基础/" class="leancloud_visitors" data-flag-title="Python 基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="语句和语法"><a href="#语句和语法" class="headerlink" title="语句和语法"></a>语句和语法</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释#"></a>注释<code>#</code></h3><p>和很多 Unix 脚本类似，在 Python 中使用<code>#</code> 字 符标记注释，从<code>#</code> 开始到当前行结束的部分都是注释。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># one comment</span></span><br></pre></td></tr></table></figure>
+<p>有一种叫做文档字符串的特别注释。你可以在模块、类或者函数的起始添加一个字符串，起到在线文档的功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"This is a doc string."</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<p>与普通注释不同，文档字符串可以在运行时访问，也可以用来自动生成文档。</p>
+<p>可以通过<code>__doc__</code>特别变量，动态获得文档字串。</p>
+<p>在模块，类 声明，或函数声明中第一个没有赋值的字符串可以用属性 <code>obj.__doc__</code>来进行访问，其中 obj 是一个模块，类，或函数的名字。这在运行时刻也可以运行。</p>
+<h3 id="使用-连接"><a href="#使用-连接" class="headerlink" title="使用\连接"></a>使用<code>\</code>连接</h3><p>Python 语句，一般使用换行分隔，也就是说一行一个语句。一行过长的语句可以使用反斜 杠<code>\</code> 分解成几行，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># check conditions</span></span><br><span class="line"><span class="keyword">if</span> (weather_is_hot == <span class="number">1</span>) <span class="keyword">and</span> \</span><br><span class="line">   (shark_warnings == <span class="number">0</span>):</span><br><span class="line">      send_goto_beach_mesg_to_pager()</span><br></pre></td></tr></table></figure>
+<p>有两种例外情况一个语句不使用反斜线也可以跨行。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/08/Python-基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/07/Python-字典和集合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -885,7 +1076,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/04/Python学习笔记之变量和内置数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/04/Python内置数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="廖若星辰">
@@ -904,7 +1095,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/04/Python学习笔记之变量和内置数据类型/" itemprop="url">Python学习笔记之变量和内置数据类型</a></h1>
+                <a class="post-title-link" href="/2018/02/04/Python内置数据类型/" itemprop="url">Python 内置数据类型</a></h1>
         
 
         <div class="post-meta">
@@ -937,7 +1128,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-05T22:19:32+08:00">2018-02-05</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-08T16:47:06+08:00">2018-02-08</time>
             
           </span>
 
@@ -969,8 +1160,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/04/Python学习笔记之变量和内置数据类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/04/Python学习笔记之变量和内置数据类型/" itemprop="commentsCount"></span>
+                <a href="/2018/02/04/Python内置数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/04/Python内置数据类型/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -979,7 +1170,7 @@
 
           
           
-             <span id="/2018/02/04/Python学习笔记之变量和内置数据类型/" class="leancloud_visitors" data-flag-title="Python学习笔记之变量和内置数据类型">
+             <span id="/2018/02/04/Python内置数据类型/" class="leancloud_visitors" data-flag-title="Python 内置数据类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1012,16 +1203,12 @@
       
         
           <p>Python 里一切都是以对象(object)的形式存在的。</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="变量的命名规则"><a href="#变量的命名规则" class="headerlink" title="变量的命名规则"></a>变量的命名规则</h3><ul>
-<li><p>变量名只能包含字母、数字和下划线。</p>
-</li>
-<li><p>变量名不能以数字开头。</p>
-</li>
-<li><p>不能使用以下保留的<strong>关键字</strong>作为变量名：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">False</span>      <span class="class"><span class="keyword">class</span>      <span class="title">finally</span>	<span class="title">is</span>         <span class="title">return</span></span></span><br><span class="line"><span class="class"><span class="title">None</span>       <span class="title">continue</span>   <span class="title">for</span>		<span class="title">lambda</span>     <span class="title">try</span></span></span><br><span class="line"><span class="class"><span class="title">True</span>       <span class="title">def</span>        <span class="title">from</span>		<span class="title">nonlocal</span>   <span class="title">while</span></span></span><br><span class="line"><span class="class"><span class="title">and</span>        <span class="title">del</span>        <span class="title">global</span>	<span class="title">not</span>        <span class="title">with</span></span></span><br><span class="line"><span class="class"><span class="title">as</span>         <span class="title">elif</span>       <span class="title">if</span>		<span class="title">or</span>         <span class="title">yield</span></span></span><br><span class="line"><span class="class"><span class="title">assert</span>     <span class="title">else</span>       <span class="title">import</span>    <span class="title">pass</span></span></span><br><span class="line"><span class="class"><span class="title">break</span>      <span class="title">except</span>     <span class="title">in</span>        <span class="title">raise</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h2><p>在 Python 中您并不需要声明变量的数据类型。Python 根据每 个变量的初始赋值情况分析其类型，并在内部对其进行跟踪。</p>
+<h3 id="type-函数查看对象类型"><a href="#type-函数查看对象类型" class="headerlink" title="type()函数查看对象类型"></a>type()函数查看对象类型</h3><p>在 Python 中，如果想知道一个对象(例如一个变量或者一个字面值)的类型，可以使用语 句：<code>type( thing )</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(a) </span><br><span class="line">&lt;class <span class="string">'int'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(b) </span><br><span class="line">&lt;class <span class="string">'int'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(58) </span><br><span class="line">&lt;class <span class="string">'int'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(99.9)</span><br><span class="line">&lt;class <span class="string">'float'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(<span class="string">'abc'</span>) </span><br><span class="line">&lt;class <span class="string">'str'</span>&gt;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/04/Python学习笔记之变量和内置数据类型/#more" rel="contents">
+            <a class="btn" href="/2018/02/04/Python内置数据类型/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1106,7 +1293,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
