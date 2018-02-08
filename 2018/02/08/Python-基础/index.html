@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Hello World!">
 <meta property="og:description" content="语句和语法注释#和很多 Unix 脚本类似，在 Python 中使用# 字 符标记注释，从# 开始到当前行结束的部分都是注释。 1# one comment 有一种叫做文档字符串的特别注释。你可以在模块、类或者函数的起始添加一个字符串，起到在线文档的功能。 123def foo():    &quot;This is a doc string.&quot;    return True 与普通注释不同，文档字符串可以">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-08T11:15:42.986Z">
+<meta property="og:updated_time" content="2018-02-08T11:29:57.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 基础">
 <meta name="twitter:description" content="语句和语法注释#和很多 Unix 脚本类似，在 Python 中使用# 字 符标记注释，从# 开始到当前行结束的部分都是注释。 1# one comment 有一种叫做文档字符串的特别注释。你可以在模块、类或者函数的起始添加一个字符串，起到在线文档的功能。 123def foo():    &quot;This is a doc string.&quot;    return True 与普通注释不同，文档字符串可以">
@@ -379,7 +379,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-08T19:15:42+08:00">2018-02-08</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-08T19:29:57+08:00">2018-02-08</time>
             
           </span>
 
@@ -511,6 +511,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'False'</span>, <span class="string">'None'</span>, <span class="string">'True'</span>, <span class="string">'and'</span>, <span class="string">'as'</span>, <span class="string">'assert'</span>, <span class="string">'break'</span>, <span class="string">'class'</span>, <span class="string">'continue'</span>, <span class="string">'def'</span>, <span class="string">'del'</span>, <span class="string">'elif'</span>, <span class="string">'else'</span>, <span class="string">'except'</span>, <span class="string">'finally'</span>, <span class="string">'for'</span>, <span class="string">'from'</span>, <span class="string">'global'</span>, <span class="string">'if'</span>, <span class="string">'import'</span>, <span class="string">'in'</span>, <span class="string">'is'</span>, <span class="string">'lambda'</span>, <span class="string">'nonlocal'</span>, <span class="string">'not'</span>, <span class="string">'or'</span>, <span class="string">'pass'</span>, <span class="string">'raise'</span>, <span class="string">'return'</span>, <span class="string">'try'</span>, <span class="string">'while'</span>, <span class="string">'with'</span>, <span class="string">'yield'</span>]</span><br></pre></td></tr></table></figure>
 <p>查看有哪些关键字：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> keyword</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>keyword.kwlist</span><br></pre></td></tr></table></figure>
+<p>除了关键字之外，Python 还有可以在任何一级代码使用的“内建”的名字集合，这些名字 可以由解释器设置或使用。虽然 built-in 不是关键字，但是应该把它当作“系统保留字”，不 做他用。然而，有些情况要求覆盖(也就是:重定义，替换)它们。Python 不支持重载标识符， 所以任何时刻都只有一个名字绑定。</p>
 <h3 id="专用下划线标识符"><a href="#专用下划线标识符" class="headerlink" title="专用下划线标识符"></a>专用下划线标识符</h3><p>Python 用下划线作为变量前缀和后缀指定特殊变量。这里对 Python 中下划线的特殊用法做了总结：</p>
 <ul>
 <li>_xxx 不用<code>from module import *</code>导入   </li>
