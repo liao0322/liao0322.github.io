@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.3" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<meta name="description" content="if 语句if 语句的语法如下: 12if expression:	expr_true_suite if 语句的 expr_true_suite 代码块只有在条件表达式的结果的布尔值为真时才执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python条件和循环">
+<meta property="og:url" content="http://liaoxf.com/2018/02/09/Python条件和循环/index.html">
+<meta property="og:site_name" content="Hello World!">
+<meta property="og:description" content="if 语句if 语句的语法如下: 12if expression:	expr_true_suite if 语句的 expr_true_suite 代码块只有在条件表达式的结果的布尔值为真时才执行">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-02-11T05:52:13.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python条件和循环">
+<meta name="twitter:description" content="if 语句if 语句的语法如下: 12if expression:	expr_true_suite if 语句的 expr_true_suite 代码块只有在条件表达式的结果的布尔值为真时才执行">
+
+
+
+
+
+
+  <link rel="canonical" href="http://liaoxf.com/2018/02/09/Python条件和循环/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Python条件和循环 | Hello World!</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4c0ab0f3a48e82a9faef429422dfea81";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hello World!</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">回首向来萧瑟处，归去，也无风雨也无晴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/09/Python条件和循环/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="廖若星辰">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World!">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python条件和循环</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T14:35:59+08:00">2018-02-09</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-11T13:52:13+08:00">2018-02-11</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/09/Python条件和循环/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/09/Python条件和循环/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/02/09/Python条件和循环/" class="leancloud_visitors" data-flag-title="Python条件和循环">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h2><p>if 语句的语法如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> expression:</span><br><span class="line">	expr_true_suite</span><br></pre></td></tr></table></figure>
+<p>if 语句的 expr_true_suite 代码块只有在条件表达式的结果的布尔值为真时才执行</p>
+<a id="more"></a>
+<h3 id="多重条件表达式"><a href="#多重条件表达式" class="headerlink" title="多重条件表达式"></a>多重条件表达式</h3><p>单个 if 语句可以通过使用布尔操作符<code>and</code> , <code>or</code> 和 <code>not</code> 实现多重判断条件或是否定判断条件.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> warn <span class="keyword">and</span> (system_load &gt;= <span class="number">10</span>):</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"WARNING: losing resources"</span></span><br><span class="line">    warn += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="单一语句的代码块"><a href="#单一语句的代码块" class="headerlink" title="单一语句的代码块"></a>单一语句的代码块</h3><p>如果一个复合语句(例如 if 子句, while 或 for 循环)的代码块仅仅包含一行代码, 那么它可 以和前面的语句写在同一行上:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> make_hard_copy: send_data_to_printer()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 为了代码可读性，并不推荐这么做</p>
+</blockquote>
+<h2 id="else-语句"><a href="#else-语句" class="headerlink" title="else 语句"></a>else 语句</h2><p>如果 if 语句的条件表达式的结果布尔值为假, 那么程序将执行 else 语句后的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> expression:</span><br><span class="line">	expr_true_suite</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	expr_false_suite</span><br></pre></td></tr></table></figure>
+<h2 id="elif-即-else-if-语句"><a href="#elif-即-else-if-语句" class="headerlink" title="elif (即 else-if )语句"></a>elif (即 else-if )语句</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> expression1:</span><br><span class="line">	expr1_true_suite</span><br><span class="line"><span class="keyword">elif</span> expression2:</span><br><span class="line">	expr2_true_suite</span><br><span class="line"><span class="keyword">elif</span> expressionN:</span><br><span class="line">	exprN_true_suite</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	none_of_the_above_suite</span><br></pre></td></tr></table></figure>
+<p>使用 <code>if-elif</code> 语句模拟switch/case</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> user.cmd == <span class="string">'create'</span>:</span><br><span class="line">	action = <span class="string">"create item"</span></span><br><span class="line"><span class="keyword">elif</span> user.cmd == <span class="string">'delete'</span>:</span><br><span class="line">	action = <span class="string">'delete item'</span></span><br><span class="line"><span class="keyword">elif</span> user.cmd == <span class="string">'update'</span>:</span><br><span class="line">	action = <span class="string">'update item'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	action = <span class="string">'invalid choice... try again!'</span></span><br></pre></td></tr></table></figure>
+<p>上面的语句完全可以满足我们的需要, 不过我们还可以用序列和成员关系操作符来简化它:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> user.cmd <span class="keyword">in</span> (<span class="string">'create'</span>, <span class="string">'delete'</span>, <span class="string">'update'</span>):</span><br><span class="line">	action = <span class="string">'%s item'</span> % user.cmd</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    action = <span class="string">'invalid choice... try again!'</span></span><br></pre></td></tr></table></figure>
+<p>另外我们可以用 Python 字典给出更加优雅的解决方案</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">msgs = &#123;<span class="string">'create'</span>: <span class="string">'create item'</span>,</span><br><span class="line">        <span class="string">'delete'</span>: <span class="string">'delete item'</span>,</span><br><span class="line">        <span class="string">'update'</span>: <span class="string">'update item'</span>&#125;</span><br><span class="line">default = <span class="string">'invalid choice... try again!'</span></span><br><span class="line">action = msgs.get(user.cmd, default)</span><br></pre></td></tr></table></figure>
+<p>使用映射对象(比如字典)的一个最大好处就是它的搜索操作比类似 if-elif-else 语句或是 for 循环这样的序列查询要快很多.</p>
+<h3 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X <span class="keyword">if</span> C <span class="keyword">else</span> Y</span><br></pre></td></tr></table></figure>
+<p>如果 C 为真，那么 X，否则 Y </p>
+<h2 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h2><p> while 中的代码块会一直循环执行, 直到循环条件不再为真</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> expression:</span><br><span class="line">	suite_to_repeat</span><br></pre></td></tr></table></figure>
+<p>while 循环的 suite_to_repeat 子句会一直循环执行， 直到 expression 值为布尔假。这种 类型的循环机制常常用在计数循环中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> (count &lt; <span class="number">9</span>):</span><br><span class="line">	<span class="keyword">print</span> <span class="string">'the index is:'</span>, count</span><br><span class="line">	count += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h2 id="for-语句"><a href="#for-语句" class="headerlink" title="for 语句"></a>for 语句</h2><p>Python 提供给我们的另一个循环机制就是 for 语句. 它提供了 Python 中最强大的循环结构. 它可以遍历序列成员，可以用在 列表解析 和 生成器表达式中, 它会自动地调用迭代器的 <code>next()</code> 方法，捕获 StopIteration 异常并结束循环(所有这一切都是在内部发生的).</p>
+<h3 id="一般语法"><a href="#一般语法" class="headerlink" title="一般语法"></a>一般语法</h3><p>for 循环会访问一个可迭代对象(例如序列或是迭代器)中的所有元素, 并在所有条目都处理过 后结束循环. 它的语法如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> iter_var <span class="keyword">in</span> iterable:</span><br><span class="line">	suite_to_repeat</span><br></pre></td></tr></table></figure>
+<h3 id="用于序列类型"><a href="#用于序列类型" class="headerlink" title="用于序列类型"></a>用于序列类型</h3><p>当迭代字符串时, 迭代变量只会包含一个字符(长度为 1 的字符串). 但这并不常用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> eachLetter <span class="keyword">in</span> <span class="string">'Names'</span>:</span><br><span class="line">...	<span class="keyword">print</span> <span class="string">'current letter:'</span>, eachLetter ...</span><br><span class="line">current letter: N</span><br><span class="line">current letter: a</span><br><span class="line">current letter: m</span><br><span class="line">current letter: e</span><br><span class="line">current letter: s</span><br></pre></td></tr></table></figure>
+<p>迭代序列有三种基本方法:</p>
+<ul>
+<li><p>通过序列项迭代</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>nameList = [<span class="string">'Walter'</span>, <span class="string">"Nicole"</span>, <span class="string">'Steven'</span>, <span class="string">'Henry'</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> eachName <span class="keyword">in</span> nameList:</span><br><span class="line"><span class="meta">... </span><span class="keyword">print</span> eachName, <span class="string">"Lim"</span></span><br><span class="line">...</span><br><span class="line">Walter Lim</span><br><span class="line">Nicole Lim</span><br><span class="line">Steven Lim</span><br><span class="line">Henry Lim</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过序列索引迭代</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>nameList = [<span class="string">'Cathy'</span>, <span class="string">"Terry"</span>, <span class="string">'Joe'</span>, <span class="string">'Heather'</span>, <span class="string">'Lucy'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> nameIndex <span class="keyword">in</span> range(len(nameList)):</span><br><span class="line"><span class="meta">... </span><span class="keyword">print</span> <span class="string">"Liu,"</span>, nameList[nameIndex]</span><br><span class="line">...</span><br><span class="line">Liu, Cathy</span><br><span class="line">Liu, Terry</span><br><span class="line">Liu, Joe</span><br><span class="line">Liu, Heather</span><br><span class="line">Liu, Lucy</span><br></pre></td></tr></table></figure>
+<p>我们没有迭代元素，而是通过列表的索引迭代</p>
+<p>这里我们使用了内建的 <code>len()</code> 函数获得序列长度, 使用 <code>range()</code> 函数创建了要迭代的序列.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(nameList)</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(len(nameList))</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>如果你对性能有所了解的话，那么毫无疑问你会意识到 直接迭代序列要比通过索引迭代快.</strong></p>
+</li>
+<li><p>使用项和索引迭代</p>
+<p>两全其美的办法是使用内建的 <code>enumerate()</code> 函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>nameList = [<span class="string">'Donn'</span>, <span class="string">'Shirley'</span>, <span class="string">'Ben'</span>, <span class="string">'Janice'</span>, ... <span class="string">'David'</span>, <span class="string">'Yen'</span>, <span class="string">'Wendy'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i, eachLee <span class="keyword">in</span> enumerate(nameList):</span><br><span class="line"><span class="meta">... </span><span class="keyword">print</span> <span class="string">"%d %s Lee"</span> % (i+<span class="number">1</span>, eachLee)</span><br><span class="line">...</span><br><span class="line"><span class="number">1</span> Donn Lee</span><br><span class="line"><span class="number">2</span> Shirley Lee</span><br><span class="line"><span class="number">3</span> Ben Lee</span><br><span class="line"><span class="number">4</span> Janice Lee</span><br><span class="line"><span class="number">5</span> David Lee</span><br><span class="line"><span class="number">6</span> Yen Lee</span><br><span class="line"><span class="number">7</span> Wendy Lee</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="用于字典类型"><a href="#用于字典类型" class="headerlink" title="用于字典类型"></a>用于字典类型</h3><p>对一个字典(或者字典的 <code>keys()</code> 函数)进行迭代将返回字典中的键。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>accusation = &#123;<span class="string">'room'</span>: <span class="string">'ballroom'</span>, <span class="string">'weapon'</span>: <span class="string">'lead pipe'</span>, <span class="string">'person'</span>: <span class="string">'Col. Mustard'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card <span class="keyword">in</span> accusation: <span class="comment"># 或者是for card in accusation.keys():</span></span><br><span class="line">...		print(card)</span><br><span class="line">...</span><br><span class="line">room</span><br><span class="line">weapon</span><br><span class="line">person</span><br></pre></td></tr></table></figure>
+<p>如果想对字典的值进行迭代，可以使用字典的 <code>values()</code> 函数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> value <span class="keyword">in</span> accusation.values():</span><br><span class="line"><span class="meta">... </span>    print(value)</span><br></pre></td></tr></table></figure>
+<p>为了以元组的形式返回键值对，可以使用字典的 <code>items()</code> 函数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> item <span class="keyword">in</span> accusation.items(): </span><br><span class="line">...		print(item)</span><br><span class="line">...</span><br><span class="line">(<span class="string">'room'</span>, <span class="string">'ballroom'</span>)</span><br><span class="line">(<span class="string">'weapon'</span>, <span class="string">'lead pipe'</span>) </span><br><span class="line">(<span class="string">'person'</span>, <span class="string">'Col. Mustard'</span>)</span><br></pre></td></tr></table></figure>
+<p>对于调用函数<code>items()</code> 返回的每一 个元组，将第一个返回值(键)赋给 card，第二个返回值(值)赋给 contents:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card, contents <span class="keyword">in</span> accusation.items():</span><br><span class="line"><span class="meta">... </span>	print(<span class="string">'Card'</span>, card, <span class="string">'has the contents'</span>, contents)</span><br></pre></td></tr></table></figure>
+<h3 id="用于迭代器类型"><a href="#用于迭代器类型" class="headerlink" title="用于迭代器类型"></a>用于迭代器类型</h3><p>用 for 循环访问迭代器和访问序列的方法差不多。 唯一的区别就是 for 语句会为你做一些额 外的事情。 迭代器并不代表循环条目的集合。</p>
+<p>迭代器对象有一个 <code>next()</code> 方法，调用后返回下一个条目。所有条目迭代完后， 迭代器引发一 个 StopIteration 异常告诉程序循环结束。for 语句在内部调用 <code>next()</code> 并捕获异常。</p>
+<p>使用迭代器做 for 循环的代码与使用序列条目几乎完全相同。事实上在大多情况下，你无法 分辨出你迭代的是一个序列还是迭代器，因此，这就是为什么我们在说要遍历一个迭代器时，实际 上可能我们指的是要遍历一个序列，迭代器，或是一个支持迭代的对象(它有 <code>next()</code>方法)。</p>
+<h3 id="range-内建函数"><a href="#range-内建函数" class="headerlink" title="range() 内建函数"></a><code>range()</code> 内建函数</h3><h4 id="range-的完整语法"><a href="#range-的完整语法" class="headerlink" title="range() 的完整语法"></a><code>range()</code> 的完整语法</h4><p>完整语法要求提供两个或三个整数参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">range(start, end, step =<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><code>range()</code> 会返回一个包含所有 k 的列表，这里 start &lt;= k &lt; end，从 start 到 end ， k 每次递增 step。 step 不可以为零，否则将发生错误。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">2</span>, <span class="number">19</span>, <span class="number">3</span>)</span><br><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">11</span>, <span class="number">14</span>, <span class="number">17</span>]</span><br></pre></td></tr></table></figure>
+<p>如果只给定两个参数，而省略 step， step 就使用默认值 1 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">3</span>, <span class="number">7</span>)</span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+<p><code>range()</code>的参 数与 C语言 的 <code>for</code> 循环变量有着直接的关系</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (eachVal = <span class="number">2</span>; eachVal &lt; <span class="number">19</span>; eachVal += <span class="number">3</span>) &#123;</span><br><span class="line">    printf(<span class="string">"value is: %d\n"</span>, eachVal);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然看起来像是一个条件循环(检查 eachVal&lt; 19 )， 但实际上是 range() 先用我们指定的条 件生成一个列表， 然后把列表用于这个 for 语句</p>
+<h4 id="range-简略语法"><a href="#range-简略语法" class="headerlink" title="range() 简略语法"></a><code>range()</code> 简略语法</h4><p><code>range()</code> 还有种简略的语法格式:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">range(end)</span><br></pre></td></tr></table></figure>
+<p>start 默认为 0 ，step 默认为 1 ，然后<code>range()</code>返回从 0 到 end 的数列</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">5</span>)</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="xrange-内建函数"><a href="#xrange-内建函数" class="headerlink" title="xrange() 内建函数"></a><code>xrange()</code> 内建函数</h3><p><code>xrange()</code>类似 <code>range()</code>，不过当你有一个很大的范围列表时，<code>xrange()</code> 可能更为适合， 因为 它不会在内存里创建列表的完整拷贝。</p>
+<p> 它只被用在 for 循环中， 在 for 循环外使用它没有意义。 </p>
+<p>同样地，你可以想到, 它的性能远高出 <code>range()</code>， 因为它不生成整个列表。</p>
+<blockquote>
+<p>python3 中已经取消了 <code>range()</code>，同时将 <code>xrange()</code> 重新命名成 <code>range()</code>，如果希望生成原来的列表形式的 range，只要用<code>list(range(…))</code>就可以了。</p>
+</blockquote>
+<h2 id="break-语句"><a href="#break-语句" class="headerlink" title="break 语句"></a>break 语句</h2><p>break 语句可以结束当前循环然后跳转到下条语句， 常用在当某个外部条件被触发(一般通过 if 语句检查)，需要立即从循环中退出时。</p>
+<p> break 语句可 以用在 while 和 for 循环中.</p>
+<h2 id="continue-语句"><a href="#continue-语句" class="headerlink" title="continue 语句"></a>continue 语句</h2><p>一些初学者有这样 的一个误解：continue 语句”立即启动循环的下一次迭代”. </p>
+<p>实际上，当遇到 continue 语句时， 程 序会终止当前循环，并忽略剩余的语句，然后回到循环的顶端. </p>
+<p>在开始下一次迭代前，如果是条件循 环，我们将验证条件表达式。如果是迭代循环，我们将验证是否还有元素可以迭代。只有在验证成功 的情况下， 我们才会开始下一次迭代。</p>
+<p>它可以被 用在 while 和 for 循环里。 while 循环是条件性的， 而 for 循环是迭代的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">valid = <span class="keyword">False</span></span><br><span class="line">count = <span class="number">3</span></span><br><span class="line"><span class="keyword">while</span> count &gt; <span class="number">0</span>:</span><br><span class="line">	input = raw_input(<span class="string">"enter password"</span>)</span><br><span class="line">	<span class="comment"># check for valid passwd</span></span><br><span class="line">	<span class="keyword">for</span> eachPasswd <span class="keyword">in</span> passwdList:</span><br><span class="line">		<span class="keyword">if</span> input == eachPasswd:</span><br><span class="line">			valid = <span class="keyword">True</span></span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> valid:   <span class="comment"># (or valid == 0)</span></span><br><span class="line">			<span class="keyword">print</span> <span class="string">"invalid input"</span></span><br><span class="line">			count -= <span class="number">1</span></span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		<span class="keyword">else</span>: </span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h2 id="pass-语句"><a href="#pass-语句" class="headerlink" title="pass 语句"></a>pass 语句</h2><p>Python 没有使用传统的大括号来标 记代码块，有时，有些地方在语法上要求要有代码，而 Python 中没有对应的空大括号或是分号<code>;</code>来表示 “不做任何事”， 如果你在需要子语句块的地方不写任何语句， 解释器会提示你 语法错误。 </p>
+<p>因此， Python 提供了 <code>pass</code>语句， 它不做任何事情</p>
+<p><code>pass</code> 同样也可作为开发中的小技巧，标记你后来要完成的 代码，例如这样:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo_func</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> user_choice == <span class="string">'do_calc'</span>:</span><br><span class="line">	<span class="keyword">pass</span> </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h2 id="while-和-for-中的-else-语句"><a href="#while-和-for-中的-else-语句" class="headerlink" title="while 和  for 中的 else 语句"></a><code>while</code> 和  <code>for</code> 中的 else 语句</h2><p>在 Python 中， 你可以在 while 和 for 循环中使用 else 语句。else 子句只在循环完成后执行，也就是说 <code>break</code> 语句也会跳过 else 块。</p>
+<p>当你想确认之前的 for 循环是否正常跑完，增加 else 判断是有用的。下面的例子中，for<br>循环打印输出奶酪的名称，并且如果任一奶酪在商店中找到则跳出循环:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>cheeses = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> cheese <span class="keyword">in</span> cheeses:</span><br><span class="line"><span class="meta">... </span>   	print(<span class="string">'This shop has some lovely'</span>, cheese)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">break</span></span><br><span class="line"><span class="meta">... </span><span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>   	print(<span class="string">'This is not much of a cheese shop, is it?'</span>)</span><br><span class="line">...</span><br><span class="line">This is not much of a cheese shop, is it?</span><br></pre></td></tr></table></figure>
+<p>for 循环用来遍历查找，如果没有找到则调用执行 else。</p>
+<p>同样在没有 else 的情况下，为了达到相同的作用，可以声明某个变量 指出在 for 循环中是否找到，看下面的例子:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>cheeses = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>found_one = <span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> cheese <span class="keyword">in</span> cheeses:</span><br><span class="line"><span class="meta">... </span>    found_one = <span class="keyword">True</span></span><br><span class="line"><span class="meta">... </span>	print(<span class="string">'This shop has some lovely'</span>, cheese)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">break</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> <span class="keyword">not</span> found_one:</span><br><span class="line"><span class="meta">... </span>	print(<span class="string">'This is not much of a cheese shop, is it?'</span>) </span><br><span class="line">...</span><br><span class="line">This is not much of a cheese shop, is it?</span><br></pre></td></tr></table></figure>
+<h2 id="使用zip-并行迭代"><a href="#使用zip-并行迭代" class="headerlink" title="使用zip()并行迭代"></a>使用<code>zip()</code>并行迭代</h2><p>在使用迭代时，有一个非常方便的技巧:通过 <code>zip()</code> 函数对多个序列进行并行迭代:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>days = [<span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fruits = [<span class="string">'banana'</span>, <span class="string">'orange'</span>, <span class="string">'peach'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>drinks = [<span class="string">'coffee'</span>, <span class="string">'tea'</span>, <span class="string">'beer'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>desserts = [<span class="string">'tiramisu'</span>, <span class="string">'ice cream'</span>, <span class="string">'pie'</span>, <span class="string">'pudding'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> day, fruit, drink, dessert <span class="keyword">in</span> zip(days, fruits, drinks, desserts): </span><br><span class="line"><span class="meta">... </span>	print(day, <span class="string">": drink"</span>, drink, <span class="string">"- eat"</span>, fruit, <span class="string">"- enjoy"</span>, dessert) </span><br><span class="line">...</span><br><span class="line">Monday : drink coffee - eat banana - enjoy tiramisu</span><br><span class="line">Tuesday : drink tea - eat orange - enjoy ice cream</span><br><span class="line">Wednesday : drink beer - eat peach - enjoy pie</span><br></pre></td></tr></table></figure>
+<p><code>zip()</code> 函数在最短序列“用完”时就会停止。</p>
+<p><code>dict()</code> 函数会将两项序列，比如元组、列表、字符串，创建成一个字典。</p>
+<p> <code>zip()</code> 函数可以遍历多个序列，在具有相同位移的项之间创建元组。</p>
+<p>下面创建英语单 词和法语单词之间的对应关系的两个元组:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>english = <span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>french = <span class="string">'Lundi'</span>, <span class="string">'Mardi'</span>, <span class="string">'Mercredi'</span></span><br></pre></td></tr></table></figure>
+<p>现在使用 <code>zip()</code> 函数配对两个元组。函数的返回值既不是元组也不是列表，而是一个整合在一起的可迭代变量:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list( zip(english, french) )</span><br><span class="line">[(<span class="string">'Monday'</span>, <span class="string">'Lundi'</span>), (<span class="string">'Tuesday'</span>, <span class="string">'Mardi'</span>), (<span class="string">'Wednesday'</span>, <span class="string">'Mercredi'</span>)]</span><br></pre></td></tr></table></figure>
+<p>配合 <code>dict()</code> 函数和 <code>zip()</code> 函数的返回值就可以得到一本微型的英法词典:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict( zip(english, french) )</span><br><span class="line">&#123;<span class="string">'Monday'</span>: <span class="string">'Lundi'</span>, <span class="string">'Tuesday'</span>: <span class="string">'Mardi'</span>, <span class="string">'Wednesday'</span>: <span class="string">'Mercredi'</span>&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://p3iigh3fx.bkt.clouddn.com/1e58a739-dc2a-4cae-bc15-ae76c6f8bbd7.jpg" alt="廖若星辰 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://p3iigh3fx.bkt.clouddn.com/8ffb3a70-7c19-4653-bb8a-d09f1887bb2e.jpg" alt="廖若星辰 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>廖若星辰</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://liaoxf.com/2018/02/09/Python条件和循环/" title="Python条件和循环">http://liaoxf.com/2018/02/09/Python条件和循环/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/08/Python-对象/" rel="next" title="Python 对象">
+                <i class="fa fa-chevron-left"></i> Python 对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="廖若星辰" />
+            
+              <p class="site-author-name" itemprop="name">廖若星辰</p>
+              <p class="site-description motion-element" itemprop="description">专注 Python iOS 全栈</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">0</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/liao0322" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i></a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:liao0322@hotmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i></a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/liaorxc" target="_blank" title="Weibo"><i class="fa fa-fw fa-weibo"></i></a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wowubuntu.com/markdown/index.html" title="Markdown 语法说明" target="_blank">Markdown 语法说明</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#if-语句"><span class="nav-number">1.</span> <span class="nav-text">if 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多重条件表达式"><span class="nav-number">1.1.</span> <span class="nav-text">多重条件表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单一语句的代码块"><span class="nav-number">1.2.</span> <span class="nav-text">单一语句的代码块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#else-语句"><span class="nav-number">2.</span> <span class="nav-text">else 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#elif-即-else-if-语句"><span class="nav-number">3.</span> <span class="nav-text">elif (即 else-if )语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三元操作符"><span class="nav-number">3.1.</span> <span class="nav-text">三元操作符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while-语句"><span class="nav-number">4.</span> <span class="nav-text">while 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-语句"><span class="nav-number">5.</span> <span class="nav-text">for 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一般语法"><span class="nav-number">5.1.</span> <span class="nav-text">一般语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用于序列类型"><span class="nav-number">5.2.</span> <span class="nav-text">用于序列类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用于字典类型"><span class="nav-number">5.3.</span> <span class="nav-text">用于字典类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用于迭代器类型"><span class="nav-number">5.4.</span> <span class="nav-text">用于迭代器类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#range-内建函数"><span class="nav-number">5.5.</span> <span class="nav-text">range() 内建函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#range-的完整语法"><span class="nav-number">5.5.1.</span> <span class="nav-text">range() 的完整语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#range-简略语法"><span class="nav-number">5.5.2.</span> <span class="nav-text">range() 简略语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xrange-内建函数"><span class="nav-number">5.6.</span> <span class="nav-text">xrange() 内建函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#break-语句"><span class="nav-number">6.</span> <span class="nav-text">break 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#continue-语句"><span class="nav-number">7.</span> <span class="nav-text">continue 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pass-语句"><span class="nav-number">8.</span> <span class="nav-text">pass 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while-和-for-中的-else-语句"><span class="nav-number">9.</span> <span class="nav-text">while 和  for 中的 else 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用zip-并行迭代"><span class="nav-number">10.</span> <span class="nav-text">使用zip()并行迭代</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">廖若星辰</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.3"></script>
+
+
+
+  
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100830, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100830, xid: "2018/02/09/Python条件和循环/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100830/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("XMfoIe8N1CgTNLcEgiGmjooM-gzGzoHsz", "yqfk5018pDDIktQHSpvDHkoq");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
