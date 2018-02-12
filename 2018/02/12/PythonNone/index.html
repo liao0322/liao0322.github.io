@@ -103,24 +103,24 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="Python 对象Python 使用对象模型来存储数据。构造任何类型的值都是一个对象。 所有的 Python 对像都拥有三个特性：身份，类型和值。  身份 每一个对象都有一个唯一的身份标识自己，任何对象的身份可以使用内建函数id()来得到。这个值可以被认为是该对象的内存地址。  类型 对象的类型决定了该对象可以保存什么类型的值，可以进行什么样的操作，以及遵循什么样的规则。您可以用内建函数 type">
+<meta name="description" content="None 是 Python 中一个特殊的值，虽然它不表示任何数据，但仍然具有重要的作用。  虽然 None 作为布尔值和 False 是一样的，但是它和 False 有很多差别。下面是一个 例子： 1234567&amp;gt;&amp;gt;&amp;gt; thing = None&amp;gt;&amp;gt;&amp;gt; if thing:...     print(&quot;It&apos;s some thing&quot;)... else:...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 对象">
-<meta property="og:url" content="http://liaoxf.com/2018/02/08/Python-对象/index.html">
+<meta property="og:title" content="Python None">
+<meta property="og:url" content="http://liaoxf.com/2018/02/12/PythonNone/index.html">
 <meta property="og:site_name" content="Hello World!">
-<meta property="og:description" content="Python 对象Python 使用对象模型来存储数据。构造任何类型的值都是一个对象。 所有的 Python 对像都拥有三个特性：身份，类型和值。  身份 每一个对象都有一个唯一的身份标识自己，任何对象的身份可以使用内建函数id()来得到。这个值可以被认为是该对象的内存地址。  类型 对象的类型决定了该对象可以保存什么类型的值，可以进行什么样的操作，以及遵循什么样的规则。您可以用内建函数 type">
+<meta property="og:description" content="None 是 Python 中一个特殊的值，虽然它不表示任何数据，但仍然具有重要的作用。  虽然 None 作为布尔值和 False 是一样的，但是它和 False 有很多差别。下面是一个 例子： 1234567&amp;gt;&amp;gt;&amp;gt; thing = None&amp;gt;&amp;gt;&amp;gt; if thing:...     print(&quot;It&apos;s some thing&quot;)... else:...">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-11T05:28:05.288Z">
+<meta property="og:updated_time" content="2018-02-12T03:46:30.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 对象">
-<meta name="twitter:description" content="Python 对象Python 使用对象模型来存储数据。构造任何类型的值都是一个对象。 所有的 Python 对像都拥有三个特性：身份，类型和值。  身份 每一个对象都有一个唯一的身份标识自己，任何对象的身份可以使用内建函数id()来得到。这个值可以被认为是该对象的内存地址。  类型 对象的类型决定了该对象可以保存什么类型的值，可以进行什么样的操作，以及遵循什么样的规则。您可以用内建函数 type">
+<meta name="twitter:title" content="Python None">
+<meta name="twitter:description" content="None 是 Python 中一个特殊的值，虽然它不表示任何数据，但仍然具有重要的作用。  虽然 None 作为布尔值和 False 是一样的，但是它和 False 有很多差别。下面是一个 例子： 1234567&amp;gt;&amp;gt;&amp;gt; thing = None&amp;gt;&amp;gt;&amp;gt; if thing:...     print(&quot;It&apos;s some thing&quot;)... else:...">
 
 
 
 
 
 
-  <link rel="canonical" href="http://liaoxf.com/2018/02/08/Python-对象/"/>
+  <link rel="canonical" href="http://liaoxf.com/2018/02/12/PythonNone/"/>
 
 
 
@@ -129,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>Python 对象 | Hello World!</title>
+  <title>Python None | Hello World!</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/08/Python-对象/">
+    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/12/PythonNone/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="廖若星辰">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 对象</h1>
+          <h1 class="post-title" itemprop="name headline">Python None</h1>
         
 
         <div class="post-meta">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T19:58:25+08:00">2018-02-08</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-12T11:40:01+08:00">2018-02-12</time>
             
 
             
@@ -379,7 +379,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-11T13:28:05+08:00">2018-02-11</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T11:46:30+08:00">2018-02-12</time>
             
           </span>
 
@@ -411,8 +411,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/08/Python-对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/08/Python-对象/" itemprop="commentsCount"></span>
+                <a href="/2018/02/12/PythonNone/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/12/PythonNone/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -421,7 +421,7 @@
 
           
           
-             <span id="/2018/02/08/Python-对象/" class="leancloud_visitors" data-flag-title="Python 对象">
+             <span id="/2018/02/12/PythonNone/" class="leancloud_visitors" data-flag-title="Python None">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -452,124 +452,17 @@
       
 
       
-        <h2 id="Python-对象"><a href="#Python-对象" class="headerlink" title="Python 对象"></a>Python 对象</h2><p>Python 使用对象模型来存储数据。构造任何类型的值都是一个对象。</p>
-<p>所有的 Python 对像都拥有三个特性：身份，类型和值。</p>
-<ul>
-<li><p>身份</p>
-<p>每一个对象都有一个唯一的身份标识自己，任何对象的身份可以使用内建函数<code>id()</code>来得到。这个值可以被认为是该对象的内存地址。</p>
-</li>
-<li><p>类型</p>
-<p>对象的类型决定了该对象可以保存什么类型的值，可以进行什么样的操作，以及遵循什么样的规则。您可以用内建函数 <code>type()</code>查看 Python 对象的类型。因为在 Python 中类型也是对象，所以<code>type()</code>返回的是对象而不是简单的 字符串。</p>
-</li>
-<li><p>值</p>
-<p>对象表示的数据项</p>
-</li>
-</ul>
-<p>上面三个特性在对象创建的时候就被赋值，除了值之外，其它两个特性都是只读的。对于 新风格的类型和类, 对象的类型也是可以改变的。</p>
-<a id="more"></a>
-<h2 id="类型对象和type类型对象"><a href="#类型对象和type类型对象" class="headerlink" title="类型对象和type类型对象"></a>类型对象和<code>type</code>类型对象</h2><p>虽然看上去把类型本身也当成对象有点特别，我们 还是要在这里提一提。你一定还记得，对象的一系列固有行为和特性(比如支持哪些运算，具 有哪些方法)必须事先定义好。从这个角度看，类型正是保存这些信息的最佳位置。描述一种 类型所需要的信息不可能用一个字符串来搞定，所以类型不能是一个简单的字符串，这些信息 不能也不应该和数据保存在一起， 所以我们将类型定义成对象。</p>
-<p>下面我们来正式介绍内建函数<code>type()</code>。通过调用 <code>type()</code>函数你能够得到特定对象的类型 信息:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; type(42)</span><br><span class="line">&lt;type &apos;int&apos;&gt;</span><br></pre></td></tr></table></figure>
-<p>您看到的<code>&lt;type &#39;int&#39;&gt;</code>实际上是一个类型对象，碰巧它输出了一个字符串来告诉你 它是个<code>int</code> 型对象。</p>
-<p>那么类型对象的类型是什么?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; type(type(42))</span><br><span class="line">&lt;type &apos;type&apos;&gt;</span><br></pre></td></tr></table></figure>
-<p>没错，所有类型对象的类型都是 <code>type</code>，它也是所有 Python 类型的根和所有 Python 标准类 的默认元类(metaclass)。</p>
-<h2 id="None，Python-的-Null-对象"><a href="#None，Python-的-Null-对象" class="headerlink" title="None，Python 的 Null 对象"></a>None，Python 的 Null 对象</h2><p>Python有一个特殊的类型，被称作 Null 对象或者 NoneType，它只有一个值，那就是 None。 它不支持任何运算也没有任何内建方法。如果非常熟悉 C 语言，和 None 类型最接近的 C 类型就 是 void，None 类型的值和 C 的 NULL 值非常相似(其他类似的对象和值包括 Perl 的 undef 和 Java 的 void 类型与 null 值)。</p>
-<p>None 没有什么有用的属性，它的布尔值总是 False。</p>
-<h2 id="对象的布尔值"><a href="#对象的布尔值" class="headerlink" title="对象的布尔值"></a>对象的布尔值</h2><p>所有标准对象均可用于布尔测试，同类型的对象之间可以比较大小。</p>
-<p>每个对象天生具有布 尔 <code>True</code> 或<code>False</code> 值。空对象、值为零的任何数字或者 Null 对象 None 的布尔值都是 False。</p>
-<p>下列对象的布尔值是 False。</p>
-<ul>
-<li>None</li>
-<li>False (布尔类型)</li>
-<li>所有的值为零的数</li>
-<li>0 (整型)</li>
-<li><code>0.0</code> (浮点型)</li>
-<li>0L (长整型)</li>
-<li>0.0+0.0j (复数)   </li>
-<li><code>&quot;&quot;</code> (空字符串)   </li>
-<li><code>[]</code> (空列表)</li>
-<li><code>()</code> (空元组)</li>
-<li><code>{}</code> (空字典)</li>
-<li><code>set()</code>(空集合)</li>
-</ul>
-<p>值不是上面列出来的任何值的对象的布尔值都是 <code>True</code>，例如 <code>non-empty</code>、<code>non-zero</code> 等等。<br>用户创建的类实例如果定义了 <code>nonzero(__nonzero__())</code>或<code>length(__len__())</code>且值为 <code>0</code>，那 么它们的布尔值就是<code>False</code>。</p>
-<h2 id="标准类型运算符"><a href="#标准类型运算符" class="headerlink" title="标准类型运算符"></a>标准类型运算符</h2><h3 id="对象值的比较"><a href="#对象值的比较" class="headerlink" title="对象值的比较"></a>对象值的比较</h3><p>比较运算符用来判断同类型对象是否相等，所有的内建类型均支持比较运算，比较运算返 回布尔值 <code>True</code> 或 <code>False</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> == <span class="number">2</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2.46</span> &lt;= <span class="number">8.33</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span>+<span class="number">4j</span> &gt;= <span class="number">2</span><span class="number">-3j</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abc'</span> == <span class="string">'xyz'</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abc'</span> &gt; <span class="string">'xyz'</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abc'</span> &lt; <span class="string">'xyz'</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">3</span>, <span class="string">'abc'</span>] == [<span class="string">'abc'</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">3</span>, <span class="string">'abc'</span>] == [<span class="number">3</span>, <span class="string">'abc'</span>]</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<p>不同于很多其它语言，多个比较操作可以在同一行上进行，求值顺序为从左到右。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &lt; <span class="number">4</span> &lt; <span class="number">7</span> <span class="comment">#sameas(3&lt;4)and(4&lt;7) </span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span> &gt; <span class="number">3</span> == <span class="number">3</span> <span class="comment">#sameas(4&gt;3)and(3==3) </span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span> &lt; <span class="number">3</span> &lt; <span class="number">5</span> != <span class="number">2</span> &lt; <span class="number">7</span></span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
-<p>其实这个表达式本质上是由 多个隐式的 <code>and</code> 连接起来的多个表达式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &lt; <span class="number">4</span> &lt; <span class="number">7</span> <span class="comment">#sameas"( 3 &lt; 4 ) and ( 4 &lt; 7 )"</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<p>我们会注意到比较操作是针对对象的值进行的，也就是说比较的是对象的数值而不是对象 本身。</p>
-<h3 id="对象身份比较"><a href="#对象身份比较" class="headerlink" title="对象身份比较"></a>对象身份比较</h3><p>作为对值比较的补充，Python 也支持对象本身的比较。对象可以被赋值到另一个变量(通 过引用)。因为每个变量都指向同一个(共享的)数据对象，只要任何一个引用发生改变，该对 象的其它引用也会随之改变。</p>
-<p>为了方便大家理解，最好先别考虑变量的值，而是将变量名看作对象的一个链接。</p>
-<p>Python 提供了<code>is</code> 和 <code>is not</code> 运算符来测试两个变量是否指向同一个对象。象下面这样执行一个测试</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a <span class="keyword">is</span> b</span><br></pre></td></tr></table></figure>
-<p>这个表达式等价于下面的表达式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id(a) == id(b)</span><br></pre></td></tr></table></figure>
-<p>标准类型对象身份比较运算符：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">运算符</th>
-<th style="text-align:center">功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">obj1 is obj2</td>
-<td style="text-align:center">obj1 和 obj2 是同一个对象</td>
-</tr>
-<tr>
-<td style="text-align:center">obj1 is not obj2</td>
-<td style="text-align:center">obj1 和 obj2 不是同一个对象</td>
-</tr>
-</tbody>
-</table>
-<h3 id="整型和字符串缓存"><a href="#整型和字符串缓存" class="headerlink" title="整型和字符串缓存"></a>整型和字符串缓存</h3><p>在上面的例子中，您会注意到我们使用的是浮点数而不是整数。为什么这样?</p>
-<p>整数对象和 字符串对象是不可变对象，所以Python会很高效的缓存它们。这会造成我们认为Python应该<br>创建新对象时，它却没有创建新对象的假象。看下面的例子:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="number">8402824</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="number">8402824</span></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = <span class="number">1.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(c)</span><br><span class="line"><span class="number">8651220</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = <span class="number">1.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(d)</span><br><span class="line"><span class="number">8651204</span></span><br></pre></td></tr></table></figure>
-<p>在上面的例子中，a 和 b 指向了相同的整数对象，但是 c 和 d 并没有指向相同的浮点数 对象。</p>
-<p>如果我们是纯粹主义者，我们会希望 a 与 b 能和 c 与 d 一样，因为我们本意就是为 了创建两个整数对象，而不是像 b = a 这样的结果。</p>
-<p>Python 仅缓存简单整数，因为它认为在 Python 应用程序中这些小整数会经常被用到。</p>
-<p>Python 缓存的整数范围是(-1, 100)，不过这个范围是会改变的，所 以请不要在你的应用程序使用这个特性。Python 2.3 中决定，在预定义缓存字符串表之外的字符串，如果不再有任何引用指向它， 那这个字符串将不会被缓存。也就是说， 被缓存的字符串将不会象以前那样永生不灭，对象回 收器一样可以回收不再被使用的字符串。</p>
-<h2 id="标准类型内建函数"><a href="#标准类型内建函数" class="headerlink" title="标准类型内建函数"></a>标准类型内建函数</h2><p>Python 提供了一些内建函数用于这些基本对象类型：<code>cmp()</code>, <code>repr()</code>, <code>str()</code>, <code>type()</code>, 和等同于 <code>repr()</code>函数的单反引号 （``）运算符。</p>
-<p>标准类型内建函数：</p>
-<ul>
-<li><p><code>cmp(obj1, obj2)</code>：比较 obj1 和 obj2, 根据比较结果返回整数 i:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i &lt; 0 if obj1 &lt; obj2</span><br><span class="line">i &gt; 0 if obj1 &gt; obj2</span><br><span class="line">i == 0 if obj1 == obj2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>repr(obj)</code> 或 `obj`：返回一个对象的字符串表示</p>
-</li>
-<li><p><code>str(obj)</code>：返回对象适合可读性好的字符串表示</p>
-</li>
-<li><p><code>type(obj)</code>：到一个对象的类型，并返回相应的 type 对象</p>
-</li>
-</ul>
-<h3 id="type"><a href="#type" class="headerlink" title="type()"></a><code>type()</code></h3><p>在 Python2.2 以前，<code>type()</code> 是内建函数。不过从那时起， 它变成了一个“工厂函数”。后面部分我们会讨论工厂函数， 现在你仍然可以将<code>type()</code>仅仅当成一个内建函数来看。 <code>type()</code> 的用法如下:</p>
-<pre><code>type(object)
-</code></pre><p><code>type()</code> 接受一个对象做为参数，并返回它的类型。它的返回值是一个type类型对象。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(<span class="number">4</span>)     <span class="comment"># int type</span></span><br><span class="line">&lt;type <span class="string">'int'</span>&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(<span class="string">'Hello World!'</span>) <span class="comment"># string type</span></span><br><span class="line">&lt;type <span class="string">'string'</span>&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(type(<span class="number">4</span>))       <span class="comment"># type type</span></span><br><span class="line">&lt;type <span class="string">'type'</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>在上面的例子里， 我们通过内建函数 <code>type()</code> 得到了一个整数和一个字符串的类型；为了 确认一下类型本身也是类型， 我们对 <code>type()</code>的返回值再次调用 <code>type()</code>。</p>
-<p>注意<code>type()</code>有趣的 输出， 它看上去不象一个典型的 Python 数据类型， 比如一个整数或一个字符串，一些东西被 一个大于号和一个小号包裹着。这种语法是为了告诉你它是一个对象。每个对象都可以实现一 个可打印的字符串表示。不过并不总是这样， 对那些不容易显示的对象来说， Python 会以一 个相对标准的格式表示这个对象，格式通常是这种形式：<code>&lt;object_something_or_another&gt;</code>，以 这种形式显示的对象通常会提供对象类别，对象 id 或位置, 或者其它合适的信息。</p>
-<h3 id="cmp"><a href="#cmp" class="headerlink" title="cmp()"></a><code>cmp()</code></h3><p>内建函数 <code>cmp()</code>用于比较两个对象 obj1 和 obj2， </p>
-<p>如果 obj1 小于 obj2，则返回一个负整 数，</p>
-<p>如果 obj1 大于 obj2 则返回一个正整数， </p>
-<p>如果 obj1 等于 obj2， 则返回 0。</p>
-<p>它的行为非常 类似于 C 语言的 <code>strcmp()</code>函数。比较是在对象之间进行的，不管是标准类型对象还是用户自定 义对象。如果是用户自定义对象，<code>cmp()</code>会调用该类的特殊方法<code>__cmp__()</code>。</p>
-<p>下面是几个使用 cmp()内建函数的对数值和字符串对象进行比较的例子。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b = <span class="number">-4</span>, <span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmp(a,b)</span><br><span class="line"><span class="number">-1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmp(b,a)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">-4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmp(a,b)</span><br><span class="line"><span class="number">0</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b = <span class="string">'abc'</span>, <span class="string">'xyz'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmp(a,b)</span><br><span class="line"><span class="number">-23</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmp(b,a)</span><br><span class="line"><span class="number">23</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">'abc'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmp(a,b)</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h3 id="str-和repr-及-运算符"><a href="#str-和repr-及-运算符" class="headerlink" title="str()和repr() (及 `` 运算符)"></a><code>str()</code>和<code>repr()</code> (及 `` 运算符)</h3><p>内建函数<code>str()</code> 和<code>repr()</code> 或反引号运算符(``) 可以方便的以字符串的方式获取对象的 内容、类型、数值属性等信息。</p>
-<p><code>str()</code>函数得到的字符串可读性好， 而 <code>repr()</code>函数得到的字符串通常可以用来重新获得该对象，通常情况下 <code>obj == eval(repr(obj))</code>这个等式是成立的。 </p>
-<p>这两个函数接受一个对象做为其参数， 返回适当的字符串。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(<span class="number">4.53</span><span class="number">-2j</span>)</span><br><span class="line"><span class="string">'(4.53-2j)'</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(<span class="number">1</span>)</span><br><span class="line"><span class="string">'1'</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(<span class="number">2e10</span>)</span><br><span class="line"><span class="string">'20000000000.0'</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str([<span class="number">0</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">9</span>])</span><br><span class="line"><span class="string">'[0, 5, 9, 9]'</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>repr([<span class="number">0</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">9</span>])</span><br><span class="line"><span class="string">'[0, 5, 9, 9]'</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>`[<span class="number">0</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">9</span>]`</span><br><span class="line"><span class="string">'[0, 5, 9, 9]'</span></span><br></pre></td></tr></table></figure>
-<p>尽管 <code>str()</code>，<code>repr()</code>和``运算在特性和功能方面都非常相似， 事实上<code>repr()</code> 和 `` 做的 是完全一样的事情，它们返回的是一个对象的“官方”字符串表示， 也就是说绝大多数情况下 可以通过求值运算(使用 <code>eval()</code>内建函数)重新得到该对象，但 <code>str()</code>则有所不同。str() 致力 于生成一个对象的可读性好的字符串表示，它的返回结果通常无法用于<code>eval()</code>求值， 但很适 合用于 print 语句输出。需要再次提醒一下的是， 并不是所有<code>repr()</code>返回的字符串都能够用<code>eval()</code>内建函数得到原来的对象:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>eval(`type(type))`)</span><br><span class="line">File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span> eval(`type(type))`)</span><br><span class="line">                    ^</span><br><span class="line">    SyntaxError: invalid syntax</span><br></pre></td></tr></table></figure>
-<p>也就是说 <code>repr()</code>输出对 Python 比较友好， 而 <code>str()</code>的输出对人比较友好。</p>
-<blockquote>
-<p>事实上 Python 社区目前已经不鼓励继续使用``运算符。</p>
-</blockquote>
-<h3 id="type-和isinstance"><a href="#type-和isinstance" class="headerlink" title="type() 和isinstance()"></a><code>type()</code> 和<code>isinstance()</code></h3><p>未完，待续…</p>
+        <p><code>None</code> 是 Python 中一个特殊的值，虽然它不表示任何数据，但仍然具有重要的作用。 </p>
+<p>虽然 <code>None</code> 作为布尔值和 <code>False</code> 是一样的，但是它和 <code>False</code> 有很多差别。下面是一个 例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>thing = <span class="keyword">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> thing:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's some thing"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's no thing"</span>)</span><br><span class="line">...</span><br><span class="line">It<span class="string">'s no thing</span></span><br></pre></td></tr></table></figure>
+<p>为了区分 <code>None</code> 和布尔值 <code>False</code> , 使用 Python 的 <code>is</code> 操作符:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> thing <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's nothing"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's something"</span>)</span><br><span class="line">...</span><br><span class="line">It<span class="string">'s nothing</span></span><br></pre></td></tr></table></figure>
+<p>这虽然是一个微妙的区别，但是对于 Python 来说是很重要的。</p>
+<p>你需要把 <code>None</code> 和不含 任何值的空数据结构区分开来。<code>0</code> 值的整型 / 浮点型、空字符串<code>&#39;&#39;</code>、空列表<code>[]</code>、 空元组<code>(,)</code>、空字典<code>{}</code>、空集合<code>set()</code>都等价于 <code>False</code>，但是不等于 None。</p>
+<p>定义一个函数，输出它的参数是否是 <code>None</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_none</span><span class="params">(thing)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> thing <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">    	print(<span class="string">"It's None"</span>)</span><br><span class="line">	<span class="keyword">elif</span> thing:</span><br><span class="line">    	print(<span class="string">"It's True"</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">    	print(<span class="string">"It's False"</span>)</span><br></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(<span class="keyword">None</span>)</span><br><span class="line">It<span class="string">'s None</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(True)</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(<span class="keyword">False</span>)</span><br><span class="line">It<span class="string">'s False</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(0)</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(<span class="number">0.0</span>)</span><br><span class="line">It<span class="string">'s False</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(())</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none([])</span><br><span class="line">It<span class="string">'s False</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(&#123;&#125;)</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(set())</span><br><span class="line">It<span class="string">'s False</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -617,7 +510,7 @@
     <strong>本文作者：</strong>廖若星辰</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liaoxf.com/2018/02/08/Python-对象/" title="Python 对象">http://liaoxf.com/2018/02/08/Python-对象/</a>
+    <a href="http://liaoxf.com/2018/02/12/PythonNone/" title="Python None">http://liaoxf.com/2018/02/12/PythonNone/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</li>
@@ -637,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/08/Python-基础/" rel="next" title="Python 基础">
-                <i class="fa fa-chevron-left"></i> Python 基础
+              <a href="/2018/02/12/Python函数/" rel="next" title="Python函数">
+                <i class="fa fa-chevron-left"></i> Python函数
               </a>
             
           </div>
@@ -646,10 +539,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/09/Python条件和循环/" rel="prev" title="Python条件和循环">
-                Python条件和循环 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -729,17 +618,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -853,22 +733,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-对象"><span class="nav-number">1.</span> <span class="nav-text">Python 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型对象和type类型对象"><span class="nav-number">2.</span> <span class="nav-text">类型对象和type类型对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#None，Python-的-Null-对象"><span class="nav-number">3.</span> <span class="nav-text">None，Python 的 Null 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的布尔值"><span class="nav-number">4.</span> <span class="nav-text">对象的布尔值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准类型运算符"><span class="nav-number">5.</span> <span class="nav-text">标准类型运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象值的比较"><span class="nav-number">5.1.</span> <span class="nav-text">对象值的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象身份比较"><span class="nav-number">5.2.</span> <span class="nav-text">对象身份比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整型和字符串缓存"><span class="nav-number">5.3.</span> <span class="nav-text">整型和字符串缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准类型内建函数"><span class="nav-number">6.</span> <span class="nav-text">标准类型内建函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">6.1.</span> <span class="nav-text">type()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cmp"><span class="nav-number">6.2.</span> <span class="nav-text">cmp()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-和repr-及-运算符"><span class="nav-number">6.3.</span> <span class="nav-text">str()和repr() (及 `` 运算符)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-和isinstance"><span class="nav-number">6.4.</span> <span class="nav-text">type() 和isinstance()</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -1022,7 +886,7 @@ var jiathis_config={
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100830, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 100830, xid: "2018/02/08/Python-对象/"});
+		_hcwp.push({widget:"Stream", widget_id: 100830, xid: "2018/02/12/PythonNone/"});
 		
 
 		(function() {
