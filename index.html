@@ -1105,7 +1105,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/06/Python列表和元组/" itemprop="url">Python 列表和元组</a></h1>
+                <a class="post-title-link" href="/2018/02/06/Python列表和元组/" itemprop="url">Python 序列</a></h1>
         
 
         <div class="post-meta">
@@ -1138,7 +1138,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-11T11:45:05+08:00">2018-02-11</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T09:13:31+08:00">2018-02-12</time>
             
           </span>
 
@@ -1180,7 +1180,7 @@
 
           
           
-             <span id="/2018/02/06/Python列表和元组/" class="leancloud_visitors" data-flag-title="Python 列表和元组">
+             <span id="/2018/02/06/Python列表和元组/" class="leancloud_visitors" data-flag-title="Python 序列">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1212,8 +1212,10 @@
 
       
         
-          <p>除字符串外，Python 还有另外两种序列结构：元组和列表。它们都可以包含零个或多个元 素。与字符串不同的是，元组和列表并不要求所含元素的种类相同，每个元素都可以是任 何 Python 类型的对象。</p>
-<p>为什么 Python 需要同时设定列表和元组这两种序列呢?这是因为元组是不可变的，当你给 元组赋值时，这些值便被固定在了元组里，再也无法修改。然而，列表却是可变的，这意 味着可以随意地插入或删除其中的元素。</p>
+          <p>成员有序排列的，并且可以通过下标 偏移量访问到它的一个或者几个成员，这类 Python 类型统称为<strong>序列</strong>。</p>
+<p>包括下面这些：<a href="http://liaoxf.com/2018/02/05/Python字符串/">Python字符串</a>，列表，和元组类型。</p>
+<p>与字符串不同的是，元组和列表并不要求所含元素的种类相同，每个元素都可以是任 何 Python 类型的对象。</p>
+<p>为什么 Python 需要同时设定列表和元组这两种序列呢？这是因为元组是不可变的，当你给 元组赋值时，这些值便被固定在了元组里，再也无法修改。然而，列表却是可变的，这意 味着可以随意地插入或删除其中的元素。</p>
 <h2 id="使用-或list-创建列表"><a href="#使用-或list-创建列表" class="headerlink" title="使用[]或list()创建列表"></a>使用<code>[]</code>或<code>list()</code>创建列表</h2><p>列表可以由零个或多个元素组成，元素之间用逗号分开，整个列表被方括号所包裹：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>empty_list = [ ]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>weekdays = [<span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>, <span class="string">'Thursday'</span>, <span class="string">'Friday'</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>big_birds = [<span class="string">'emu'</span>, <span class="string">'ostrich'</span>, <span class="string">'cassowary'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>first_names = [<span class="string">'Graham'</span>, <span class="string">'John'</span>, <span class="string">'Terry'</span>, <span class="string">'Terry'</span>, <span class="string">'Michael'</span>]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
