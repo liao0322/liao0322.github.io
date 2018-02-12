@@ -103,24 +103,24 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="Python 里一切都是以对象(object)的形式存在的。 内置数据类型在 Python 中您并不需要声明变量的数据类型。Python 根据每 个变量的初始赋值情况分析其类型，并在内部对其进行跟踪。 type()函数查看对象类型在 Python 中，如果想知道一个对象(例如一个变量或者一个字面值)的类型，可以使用语 句：type( thing )。 12345678910&amp;gt;&amp;gt;&amp;gt;">
+<meta name="description" content="迭代器和 iter() 函数迭代(Iteration)用简单的话讲，它就是从某个地方（比如一个列表）取出一个元素的过程。当我们使用一个循环来遍历某个东西时，这个过程本身就叫迭代。 可迭代对象(Iterable)Python中任意的对象，只要它定义了可以返回一个迭代器的__iter__方法，或者定义了可以支持下标索引的__getitem__方法，那么它就是一个可迭代对象。简单说，可迭代对象就是能提供">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 内置数据类型">
-<meta property="og:url" content="http://liaoxf.com/2018/02/04/Python内置数据类型/index.html">
+<meta property="og:title" content="Python 迭代器和推导式">
+<meta property="og:url" content="http://liaoxf.com/2018/02/11/Python迭代器和推导式/index.html">
 <meta property="og:site_name" content="Hello World!">
-<meta property="og:description" content="Python 里一切都是以对象(object)的形式存在的。 内置数据类型在 Python 中您并不需要声明变量的数据类型。Python 根据每 个变量的初始赋值情况分析其类型，并在内部对其进行跟踪。 type()函数查看对象类型在 Python 中，如果想知道一个对象(例如一个变量或者一个字面值)的类型，可以使用语 句：type( thing )。 12345678910&amp;gt;&amp;gt;&amp;gt;">
+<meta property="og:description" content="迭代器和 iter() 函数迭代(Iteration)用简单的话讲，它就是从某个地方（比如一个列表）取出一个元素的过程。当我们使用一个循环来遍历某个东西时，这个过程本身就叫迭代。 可迭代对象(Iterable)Python中任意的对象，只要它定义了可以返回一个迭代器的__iter__方法，或者定义了可以支持下标索引的__getitem__方法，那么它就是一个可迭代对象。简单说，可迭代对象就是能提供">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-11T05:51:35.725Z">
+<meta property="og:updated_time" content="2018-02-12T03:06:29.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 内置数据类型">
-<meta name="twitter:description" content="Python 里一切都是以对象(object)的形式存在的。 内置数据类型在 Python 中您并不需要声明变量的数据类型。Python 根据每 个变量的初始赋值情况分析其类型，并在内部对其进行跟踪。 type()函数查看对象类型在 Python 中，如果想知道一个对象(例如一个变量或者一个字面值)的类型，可以使用语 句：type( thing )。 12345678910&amp;gt;&amp;gt;&amp;gt;">
+<meta name="twitter:title" content="Python 迭代器和推导式">
+<meta name="twitter:description" content="迭代器和 iter() 函数迭代(Iteration)用简单的话讲，它就是从某个地方（比如一个列表）取出一个元素的过程。当我们使用一个循环来遍历某个东西时，这个过程本身就叫迭代。 可迭代对象(Iterable)Python中任意的对象，只要它定义了可以返回一个迭代器的__iter__方法，或者定义了可以支持下标索引的__getitem__方法，那么它就是一个可迭代对象。简单说，可迭代对象就是能提供">
 
 
 
 
 
 
-  <link rel="canonical" href="http://liaoxf.com/2018/02/04/Python内置数据类型/"/>
+  <link rel="canonical" href="http://liaoxf.com/2018/02/11/Python迭代器和推导式/"/>
 
 
 
@@ -129,7 +129,7 @@
     sidebar: "",
   };
 </script>
-  <title>Python 内置数据类型 | Hello World!</title>
+  <title>Python 迭代器和推导式 | Hello World!</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/04/Python内置数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://liaoxf.com/2018/02/11/Python迭代器和推导式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="廖若星辰">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 内置数据类型</h1>
+          <h1 class="post-title" itemprop="name headline">Python 迭代器和推导式</h1>
         
 
         <div class="post-meta">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T16:07:44+08:00">2018-02-04</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T14:01:43+08:00">2018-02-11</time>
             
 
             
@@ -379,7 +379,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-11T13:51:35+08:00">2018-02-11</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T11:06:29+08:00">2018-02-12</time>
             
           </span>
 
@@ -411,8 +411,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/04/Python内置数据类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/04/Python内置数据类型/" itemprop="commentsCount"></span>
+                <a href="/2018/02/11/Python迭代器和推导式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/11/Python迭代器和推导式/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -421,7 +421,7 @@
 
           
           
-             <span id="/2018/02/04/Python内置数据类型/" class="leancloud_visitors" data-flag-title="Python 内置数据类型">
+             <span id="/2018/02/11/Python迭代器和推导式/" class="leancloud_visitors" data-flag-title="Python 迭代器和推导式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -452,136 +452,90 @@
       
 
       
-        <p>Python 里一切都是以对象(object)的形式存在的。</p>
-<h2 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h2><p>在 Python 中您并不需要声明变量的数据类型。Python 根据每 个变量的初始赋值情况分析其类型，并在内部对其进行跟踪。</p>
-<h3 id="type-函数查看对象类型"><a href="#type-函数查看对象类型" class="headerlink" title="type()函数查看对象类型"></a>type()函数查看对象类型</h3><p>在 Python 中，如果想知道一个对象(例如一个变量或者一个字面值)的类型，可以使用语 句：<code>type( thing )</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(a) </span><br><span class="line">&lt;class <span class="string">'int'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(b) </span><br><span class="line">&lt;class <span class="string">'int'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(58) </span><br><span class="line">&lt;class <span class="string">'int'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(99.9)</span><br><span class="line">&lt;class <span class="string">'float'</span>&gt; </span><br><span class="line">&gt;&gt;&gt; <span class="built_in">type</span>(<span class="string">'abc'</span>) </span><br><span class="line">&lt;class <span class="string">'str'</span>&gt;</span><br></pre></td></tr></table></figure>
+        <h2 id="迭代器和-iter-函数"><a href="#迭代器和-iter-函数" class="headerlink" title="迭代器和 iter() 函数"></a>迭代器和 <code>iter()</code> 函数</h2><h3 id="迭代-Iteration"><a href="#迭代-Iteration" class="headerlink" title="迭代(Iteration)"></a>迭代(Iteration)</h3><p>用简单的话讲，它就是从某个地方（比如一个列表）取出一个元素的过程。当我们使用一个循环来遍历某个东西时，这个过程本身就叫迭代。</p>
+<h3 id="可迭代对象-Iterable"><a href="#可迭代对象-Iterable" class="headerlink" title="可迭代对象(Iterable)"></a>可迭代对象(Iterable)</h3><p>Python中任意的对象，只要它定义了可以返回一个迭代器的<code>__iter__</code>方法，或者定义了可以支持下标索引的<code>__getitem__</code>方法，那么它就是一个可迭代对象。简单说，可迭代对象就是能提供迭代器的任意对象。</p>
+<h3 id="迭代器-Iterator"><a href="#迭代器-Iterator" class="headerlink" title="迭代器(Iterator)"></a>迭代器(Iterator)</h3><p>任意对象，只要定义了<code>next()</code>(Python2) 或者<code>__next__</code>方法，它就是一个迭代器。</p>
 <a id="more"></a>
-<h3 id="isinstance-函数判断某个值或变量是否为给定某个类型。"><a href="#isinstance-函数判断某个值或变量是否为给定某个类型。" class="headerlink" title="isinstance() 函数判断某个值或变量是否为给定某个类型。"></a>isinstance() 函数判断某个值或变量是否为给定某个类型。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>isinstance(<span class="number">1</span>, int) </span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<h3 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h3><p>Python 有两个被巧妙地命名为 <code>True</code> 和 <code>False</code> 的常量，可用于对布尔类型的直接赋值。</p>
-<h3 id="数值型"><a href="#数值型" class="headerlink" title="数值型"></a>数值型</h3><p>Python 本身支持整数(比如 5 和 1000000000)以及浮点数(比如 3.1416、14.99 和 1.87e4)。你可以对这些数字进行下表中的计算。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>描述</th>
-<th>示例</th>
-<th>运算结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+</td>
-<td>加法</td>
-<td>5 + 8</td>
-<td>13</td>
-</tr>
-<tr>
-<td>-</td>
-<td>减法</td>
-<td>90 – 10</td>
-<td>80</td>
-</tr>
-<tr>
-<td>*</td>
-<td>乘法</td>
-<td>4 * 7</td>
-<td>28</td>
-</tr>
-<tr>
-<td>/</td>
-<td>除法</td>
-<td>7 / 2</td>
-<td>3.5</td>
-</tr>
-<tr>
-<td>//</td>
-<td>取整除（返回商的整数部分）</td>
-<td>7 // 2</td>
-<td>3</td>
-</tr>
-<tr>
-<td>%</td>
-<td>模（求余）</td>
-<td>7 % 3</td>
-<td>1</td>
-</tr>
-<tr>
-<td>**</td>
-<td>幂</td>
-<td>3 ** 4</td>
-<td>81</td>
-</tr>
-</tbody>
-</table>
-<h4 id="整数int"><a href="#整数int" class="headerlink" title="整数int"></a>整数int</h4><p>任何仅含数字的序列在 Python 中都被认为是整数:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
-<p>你可以单独使用数字零(0):</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>但不能把它作为前缀放在其他数字前面:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">05</span></span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span></span><br><span class="line">    <span class="number">05</span></span><br><span class="line">     ^</span><br><span class="line">SyntaxError: invalid token</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-<p>一个数字序列定义了一个正整数。你也可以显式地在前面加上正号 +，这不会使数字发生 任何改变:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">123</span></span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>+<span class="number">123</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
-<p>在数字前添加负号 - 可以定义一个负数:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">-123</span></span><br><span class="line"><span class="number">-123</span></span><br></pre></td></tr></table></figure>
-<p>除法运算比较有意思，可能与你预期的有些出入，因为 Python 里有两种除法:</p>
+<p>它为类序列对象提供了一个类序列的接口。</p>
+<p> 你可以迭代不是序列但表现出序列行为的对象，例如字典的 key ， 一个 文件的行， 等等。 当你使用循环迭代一个对象条目时，你几乎不可能分辨出它是迭代器还是序列。你不必去关注这些，因为 Python 让它象一个序列那样操作。</p>
+<p>当你或是一个循 环机制(例如 for 语句)需要下一个项时，调用迭代器的 <code>next()</code> 方法就可以获得它。条目全部取 出后， 会引发一个 StopIteration 异常， 这并不表示错误发生，只是告诉外部调用者， 迭代完成。</p>
+<p>不过，迭代器也有一些限制。例如你不能向后移动，不能回到开始，也不能复制一个迭代器。如果你要再次(或者是同时)迭代同个对象， 你只能去创建另一个迭代器对象。</p>
+<p><code>reversed()</code> 内建函数将返回一个反序访问的迭代器。</p>
+<p><code>enumerate()</code> 内建函数同样也返回迭代器。</p>
+<p>另外两个新的内建函数。 <code>any()</code> 和 <code>all()</code> ，如果迭代器中某个/所有条目 的值都为布尔真时，则它们返回值为真。</p>
+<h3 id="如何创建迭代器"><a href="#如何创建迭代器" class="headerlink" title="如何创建迭代器"></a>如何创建迭代器</h3><p>对一个对象调用 <code>iter()</code> 就可以得到它的迭代器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iter(obj)</span><br><span class="line">iter(func, sentinel )</span><br></pre></td></tr></table></figure>
+<p>如果你传递一个参数给<code>iter()</code> ，它会检查你传递的是不是一个序列，如果是， 那么很简单: 根据索引从 0 一直迭代到序列结束。</p>
+<p>另一个创建迭代器的方法是使用类, 我们将在面向对象中详细 介绍：一个实现了 <code>__iter__()</code> 和 <code>next()</code>方法的类可以作为迭代器使用.</p>
+<p>如果是传递两个参数给 <code>iter()</code> ， 它会重复地调用 func，直到迭代器的下个值等于 sentinel .</p>
+<h3 id="使用迭代器"><a href="#使用迭代器" class="headerlink" title="使用迭代器"></a>使用迭代器</h3><h4 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h4><p>迭代 Python 的序列对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>myTuple = (<span class="number">123</span>, <span class="string">'xyz'</span>, <span class="number">45.67</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>i = iter(myTuple)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>i.next()</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>i.next()</span><br><span class="line"><span class="string">'xyz'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>i.next()</span><br><span class="line"><span class="number">45.67</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>i.next()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File "", line 1, in ?</span><br><span class="line">StopIteration</span><br></pre></td></tr></table></figure>
+<p>如果这是一个实际应用程序，那么我们需要把代码放在一个<code>try-except</code> 块中。序列现在会自 动地产生它们自己的迭代器，所以一个 for 循环:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> seq:</span><br><span class="line">	do_something_to(i)</span><br></pre></td></tr></table></figure>
+<p>实际上是这样工作的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fetch = iter(seq)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		i = fetch.next()</span><br><span class="line">	<span class="keyword">except</span> StopIteration:</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line">	do_something_to(i)</span><br></pre></td></tr></table></figure>
+<p>for 循环会自动调用迭代器的 <code>next()</code> 方法(以及监视 StopIteration 异常).</p>
+<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><p>字典和文件是另外两个可迭代的 Python 数据类型。字典的迭代器会遍历它的键(keys)。语句 <code>for eachKey in myDict.keys()</code> 可以缩写为<code>for eachKey in myDict</code></p>
+<p>另外， Python 还引进了三个新的内建字典方法来定义迭代：</p>
 <ul>
-<li><code>/</code> 用来执行浮点除法(十进制小数)</li>
-<li><code>//</code> 用来执行整数除法(整除)</li>
+<li><code>myDict.iterkeys()</code> (通过 keys 迭 代)</li>
+<li><code>myDict.itervalues()</code> (通过 values 迭代)</li>
+<li><code>myDicit.iteritems()</code> (通过 key/value 对 来迭代). </li>
+<li>注意： in 操作符也可以用于检查字典的 key 是否存在 ，之前的布尔表达式 <code>myDict.has_key(anyKey)</code> 可以被简写为 <code>anyKey in myDict</code> 。</li>
 </ul>
-<p>与其他语言不同，在 Python 中即使运算对象是两个整数，使用 / 仍会得到浮点型的结果:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">9</span> / <span class="number">5</span> </span><br><span class="line"><span class="number">1.8</span></span><br></pre></td></tr></table></figure>
-<p>使用整除运算得到的是一个整数，余数会被截去:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">9</span> // <span class="number">5</span> </span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>如果除数为 0，任何一种除法运算都会产生 Python 异常:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> / <span class="number">0</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">7</span> // <span class="number">0</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: integer division <span class="keyword">or</span> modulo by zero</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-<p>Python 还支持以下写法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">95</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a -= <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="number">92</span></span><br></pre></td></tr></table></figure>
-<p>使用下面的方法可以同时得到余数和商:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>divmod(<span class="number">9</span>,<span class="number">5</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
-<p>上面的代码出现了一些你没见过的新东西:一个叫作 divmod 的函数。这个函数接受了两个 整数:9 和 5，并返回了一个包含两个元素的结果，我们称这种结构为元组(tuple)。</p>
-<h4 id="运算优先级"><a href="#运算优先级" class="headerlink" title="运算优先级"></a>运算优先级</h4><p>建议总是使用括号来保证运算顺序与我们期望的一致:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> + (<span class="number">3</span> * <span class="number">4</span>)</span><br><span class="line"><span class="number">14</span></span><br></pre></td></tr></table></figure>
-<h4 id="基数"><a href="#基数" class="headerlink" title="基数"></a>基数</h4><p>在 Python 中，整数默认使用十进制数，除非你在数字前添加前缀，显式地指 定使用其他基数(base)。</p>
-<p>在 Python 中，除十进制外你还可以使用其他三种进制的数字:</p>
-<ul>
-<li>0b 或 0B 代表二进制(以 2 为底)</li>
-<li>0o 或 0O 代表八进制(以 8 为底)</li>
-<li>0x 或 0X 代表十六进制(以 16 为底)</li>
-</ul>
-<p>Python 解释器会打印出它们对应的十进制整数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0b10</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0o10</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0x10</span></span><br><span class="line"><span class="number">16</span></span><br></pre></td></tr></table></figure>
-<h4 id="使用int-函数转换为整型"><a href="#使用int-函数转换为整型" class="headerlink" title="使用int()函数转换为整型"></a>使用<code>int()</code>函数转换为整型</h4><p>我们可以方便地使用 int() 函数将其他的 Python 数据类型转换为整型。它会保留传入数据的整数部分并舍去小数部分。</p>
-<p>Python 里最简单的数据类型是布尔型，它只有两个可选值：True 和 False。当转换为整数时，它们分别代表 1 和 0：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="keyword">True</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="keyword">False</span>)</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p>当将浮点数转换为整数时，int() 将进行取整，而不是四舍五入。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="number">98.6</span>)</span><br><span class="line"><span class="number">98</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="number">1.0e4</span>)</span><br><span class="line"><span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<p>也可以将仅包含数字和正负号的字符串转换为整数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'99'</span>) </span><br><span class="line"><span class="number">99</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'-23'</span>) </span><br><span class="line"><span class="number">-23</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'+12'</span>) </span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
-<p>将一个整数转换为整数没有太多意义，这既不会产生任何改变也不会造成任何损失：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="number">12345</span>)</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
-<p>如果你试图将一个与数字无关的类型转化为整数，会得到一个异常：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'asfd'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> int() <span class="keyword">with</span> base <span class="number">10</span>: <span class="string">'asfd'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">''</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> int() <span class="keyword">with</span> base <span class="number">10</span>: <span class="string">''</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-<p><code>int()</code>可以接受浮点数或由数字组成的字符串，但无法接受包含小数点或指数的字符串：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'98.6'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> int() <span class="keyword">with</span> base <span class="number">10</span>: <span class="string">'98.6'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(<span class="string">'1.0e4'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: invalid literal <span class="keyword">for</span> int() <span class="keyword">with</span> base <span class="number">10</span>: <span class="string">'1.0e4'</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-<p>如果混合使用多种不同的数字类型进行计算，Python 会自动地进行类型转换：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span> + <span class="number">7.0</span></span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure>
-<p>与整数或浮点数混合使用时，布尔型的 False 会被当作 0 或 0.0，Ture 会被当作 1 或 1.0：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">True</span> + <span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">False</span> + <span class="number">5.0</span></span><br><span class="line"><span class="number">5.0</span></span><br></pre></td></tr></table></figure>
-<h4 id="一个int型有多大"><a href="#一个int型有多大" class="headerlink" title="一个int型有多大"></a>一个int型有多大</h4><p>在 Python 2 里，一个 int 型包含 32 位，可以存储从 -2 147 483 648 到 2 147 483 647 的整数。</p>
-<p>一个 long 型会占用更多的空间:64 位，可以存储从 -9 223 372 036 854 775 808 到 9 223 372 036 854 775 807 的整数。</p>
-<p>到了 Python 3，long 类型已不复存在，而 int 类型变为可以存储任意大小的整数，甚至超 过 64 位。因此，你可以进行像下面一样计算 (10**100 被赋值给名为 googol 的变量，这是 Google 最初的名字，但由于其拼写困难而被现在的名字所取代)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>googol = <span class="number">10</span>**<span class="number">100</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>googol  <span class="number">10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>googol * googol</span><br><span class="line"><span class="number">100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span></span><br></pre></td></tr></table></figure>
-<p>在许多其他编程语言中，进行类似上面的计算会造成<strong>整数溢出</strong>，这是因为计算中的数字或 结果需要的存储空间超过了计算机所提供的(例如 32 位或 64 位)。在程序编写中，溢出 会产生许多负面影响。而 Python 在处理超大数计算方面不会产生任何错误，这也是它的一个加分点。</p>
-<h4 id="浮点数float"><a href="#浮点数float" class="headerlink" title="浮点数float"></a>浮点数float</h4><p>使用 <code>float()</code> 函数可以将其他数字类型转换为浮点型。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="keyword">True</span>)</span><br><span class="line"><span class="number">1.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="keyword">False</span>)</span><br><span class="line"><span class="number">0.0</span></span><br></pre></td></tr></table></figure>
-<p>将整数转换为浮点数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="number">98</span>) </span><br><span class="line"><span class="number">98.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="string">'99'</span>) </span><br><span class="line"><span class="number">99.0</span></span><br></pre></td></tr></table></figure>
-<p>此外，也可以将包含有效浮点数(数字、正负号、小数点、指数及指数的前缀 e)的字符 串转换为真正的浮点型数字：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="string">'98.6'</span>) </span><br><span class="line"><span class="number">98.6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="string">'-1.5'</span>) </span><br><span class="line"><span class="number">-1.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(<span class="string">'1.0e4'</span>) </span><br><span class="line"><span class="number">10000.0</span></span><br></pre></td></tr></table></figure>
-<p>浮点数精确到小数点后 15 位。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1.12345678901234567890</span>  </span><br><span class="line"><span class="number">1.1234567890123457</span></span><br></pre></td></tr></table></figure>
-
+<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><p>文件对象生成的迭代器会自动调用 <code>readline()</code> 方法.</p>
+<p>这样，循环就可以访问文本文件的所有 行。 程序员可以使用 更简单的 <code>for eachLine in myFile</code> 替换 <code>for eachLine in myFile.readlines()</code> </p>
+<h3 id="可变对象和迭代器"><a href="#可变对象和迭代器" class="headerlink" title="可变对象和迭代器"></a>可变对象和迭代器</h3><p>记住，在迭代可变对象的时候修改它们并不是个好主意。</p>
+<p>一个流行的例子就是循环列表的时候删除满足(或不满足)特定条件的项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> eachURL <span class="keyword">in</span> allURLs:</span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> eachURL.startswith(<span class="string">'http://'</span>):</span><br><span class="line">a	llURLs.remove(eachURL) <span class="comment"># YIKES!!</span></span><br></pre></td></tr></table></figure>
+<p>一个序列的迭代器只是记录你 当前到达第多少个元素，所以如果你在迭代时改变了元素，更新会立即反映到你所迭代的条目上。</p>
+<p> 在迭代字典的 key 时，你绝对不能改变这个字典。使用字典的 <code>keys()</code> 方法是可以的，因为 <code>keys()</code> 返回一个独立于字典的列表。 而迭代器是与实际对象绑定在一起的， 它将不会继续执行下去</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>myDict = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">4</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> eachKey <span class="keyword">in</span> myDict:</span><br><span class="line"><span class="meta">... </span>	<span class="keyword">print</span> eachKey, myDict[eachKey]</span><br><span class="line"><span class="meta">... </span>	<span class="keyword">del</span> myDict[eachKey]</span><br><span class="line"><span class="meta">... </span>a <span class="number">1</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File "", line 1, in ?</span><br><span class="line">RuntimeError: dictionary changed size during iteration</span><br></pre></td></tr></table></figure>
+<h2 id="推导式"><a href="#推导式" class="headerlink" title="推导式"></a>推导式</h2><p><strong>推导式</strong>是从一个或者多个迭代器快速简洁地创建数据结构的一种方法。</p>
+<p>它可以将循环和条 件判断结合，从而避免语法冗长的代码。</p>
+<p>会使用推导式有时可以说明你已经超过 Python 初 学者的水平。也就是说，使用推导式更像 Python 风格。</p>
+<h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><p>语法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ expression <span class="keyword">for</span> item <span class="keyword">in</span> iterable ]</span><br></pre></td></tr></table></figure>
+<p>下面的例子将通过列表推导创建一个整数列表:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number_list = [number <span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">6</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>number_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<p>在第一行中，第一个 number 变量为列表生成值，也就是说，把循环的结果放在列表 number_list 中。第二个 number 为循环变量。其中第一个 number 可以为表达式，试试下面 改编的例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number_list = [number<span class="number">-1</span> <span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">6</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>number_list</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<p>列表推导把循环放在方括号内部。这种例子和之前碰到的不大一样，但却是更为常见的方 式。</p>
+<p><strong>同样，列表推导也可以像下面的例子加上条件表达式:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[expression <span class="keyword">for</span> item <span class="keyword">in</span> iterable <span class="keyword">if</span> condition]</span><br></pre></td></tr></table></figure>
+<p>现在，通过推导创建一个在1到5之间的偶数列表(当number % 2为真时，代表奇数;为<br>假时，代表偶数):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list = [number <span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">6</span>) <span class="keyword">if</span> number % <span class="number">2</span> == <span class="number">1</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<p>于是，上面的推导要比之前传统的方法更简洁:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">...		<span class="keyword">if</span> number % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">...			a_list.append(number)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span> a_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<p>最后，正如存在很多嵌套循环一样，在对应的推导中也会有多个 for … 语句。我们先来看一个简单的嵌套循环的例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>rows = range(<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cols = range(<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> row <span class="keyword">in</span> rows:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> col <span class="keyword">in</span> cols:</span><br><span class="line"><span class="meta">... </span>        print(row, col)</span><br></pre></td></tr></table></figure>
+<p>下面使用一次推导，将结果赋值给变量 cells，使它成为元组 <code>(row,col)</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>rows = range(<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cols = range(<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cells = [(row, col) <span class="keyword">for</span> row <span class="keyword">in</span> rows <span class="keyword">for</span> col <span class="keyword">in</span> cols]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> cell <span class="keyword">in</span> cells:</span><br><span class="line"><span class="meta">... </span>    print(cell)</span><br></pre></td></tr></table></figure>
+<p>其中，在列表推导中 for row … 和 for col … 都可以有自己单独的 if 条件判断。</p>
+<h3 id="字典推导式"><a href="#字典推导式" class="headerlink" title="字典推导式"></a>字典推导式</h3><p>除了列表，字典也有自己的推导式。最简单的例子就像:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; key_expression : value_expression <span class="keyword">for</span> expression <span class="keyword">in</span> iterable &#125;</span><br></pre></td></tr></table></figure>
+<p>类似于列表推导，字典推导也有 if 条件判断以及多个 for 循环迭代语句:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>word = <span class="string">'letters'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>letter_counts = &#123;letter: word.count(letter) <span class="keyword">for</span> letter <span class="keyword">in</span> word&#125; </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>letter_counts</span><br><span class="line">&#123;<span class="string">'l'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">2</span>, <span class="string">'t'</span>: <span class="number">2</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'s'</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>程序中，对字符串 ‘letters’ 中出现的字母进行循环，计算出每个字母出现的次数。</p>
+<p>对于 程序执行来说，两次调用 <code>word.count(letter)</code> 浪费时间，因为字符串中 t 和 e 都出现了两 次，第一次调用<code>word.count()</code> 时已经计算得到相应的值。下面的例子会解决这个小问题， 更符合 Python 风格:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>word = <span class="string">'letters'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>letter_counts = &#123;letter: word.count(letter) <span class="keyword">for</span> letter <span class="keyword">in</span> set(word)&#125; </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>letter_counts</span><br><span class="line">&#123;<span class="string">'t'</span>: <span class="number">2</span>, <span class="string">'l'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">2</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'s'</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>字典键的顺序和之前的例子是不同的，因为是对 <code>set(word)</code>集合进行迭代的，而前面的例 子是对 word 字符串迭代。</p>
+<h3 id="集合推导式"><a href="#集合推导式" class="headerlink" title="集合推导式"></a>集合推导式</h3><p>集合也不例外，同样有推导式。最简单的版本和之前的列表、字典推导类似:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;expression <span class="keyword">for</span> expression <span class="keyword">in</span> iterable &#125;</span><br></pre></td></tr></table></figure>
+<p>最长的版本<code>(if tests, multiple for clauses)</code>对于集合而言也是可行的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_set = &#123;number <span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">6</span>) <span class="keyword">if</span> number % <span class="number">3</span> == <span class="number">1</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_set</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="生成器推导式"><a href="#生成器推导式" class="headerlink" title="生成器推导式"></a>生成器推导式</h3><p>元组是没有推导式的。你可能认为将列表推导式中的方括号变成圆括号就可以定义元组推导式，就像下面的表达式一样:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number_thing = (number <span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">6</span>))</span><br></pre></td></tr></table></figure>
+<p>其实，圆括号之间的是<strong>生成器推导式</strong>，它返回的是一个<strong>生成器对象</strong>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(number_thing)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">generotor</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>生成器是将数据传给迭代器的一种方式。</p>
+<p>你可以直接对生成器对象进行迭代</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> number <span class="keyword">in</span> number_thing:</span><br><span class="line"><span class="meta">... </span>    print(number)</span><br><span class="line">...</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span> </span><br><span class="line"><span class="number">3</span> </span><br><span class="line"><span class="number">4</span> </span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>或者，通过对一个生成器的推导式调用 <code>list()</code> 函数，使它类似于列表推导式:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>number_list = list(number_thing)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>number_list</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<p>一个生成器只能运行一次。列表、集合、字符串和字典都存储在内存中，但 是生成器仅在运行中产生值，不会被存下来，所以不能重新使用或者备份一 个生成器。</p>
+<p>如果想再一次迭代此生成器，会发现它被擦除了:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>try_again = list(number_thing)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>try_again</span><br><span class="line">[]</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -628,7 +582,7 @@
     <strong>本文作者：</strong>廖若星辰</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://liaoxf.com/2018/02/04/Python内置数据类型/" title="Python 内置数据类型">http://liaoxf.com/2018/02/04/Python内置数据类型/</a>
+    <a href="http://liaoxf.com/2018/02/11/Python迭代器和推导式/" title="Python 迭代器和推导式">http://liaoxf.com/2018/02/11/Python迭代器和推导式/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！</li>
@@ -648,15 +602,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/02/09/Python条件和循环/" rel="next" title="Python条件和循环">
+                <i class="fa fa-chevron-left"></i> Python条件和循环
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/05/Python字符串/" rel="prev" title="Python 字符串">
-                Python 字符串 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -870,7 +824,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置数据类型"><span class="nav-number">1.</span> <span class="nav-text">内置数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#type-函数查看对象类型"><span class="nav-number">1.1.</span> <span class="nav-text">type()函数查看对象类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isinstance-函数判断某个值或变量是否为给定某个类型。"><span class="nav-number">1.2.</span> <span class="nav-text">isinstance() 函数判断某个值或变量是否为给定某个类型。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔型"><span class="nav-number">1.3.</span> <span class="nav-text">布尔型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值型"><span class="nav-number">1.4.</span> <span class="nav-text">数值型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整数int"><span class="nav-number">1.4.1.</span> <span class="nav-text">整数int</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算优先级"><span class="nav-number">1.4.2.</span> <span class="nav-text">运算优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基数"><span class="nav-number">1.4.3.</span> <span class="nav-text">基数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用int-函数转换为整型"><span class="nav-number">1.4.4.</span> <span class="nav-text">使用int()函数转换为整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个int型有多大"><span class="nav-number">1.4.5.</span> <span class="nav-text">一个int型有多大</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数float"><span class="nav-number">1.4.6.</span> <span class="nav-text">浮点数float</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器和-iter-函数"><span class="nav-number">1.</span> <span class="nav-text">迭代器和 iter() 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代-Iteration"><span class="nav-number">1.1.</span> <span class="nav-text">迭代(Iteration)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可迭代对象-Iterable"><span class="nav-number">1.2.</span> <span class="nav-text">可迭代对象(Iterable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器-Iterator"><span class="nav-number">1.3.</span> <span class="nav-text">迭代器(Iterator)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何创建迭代器"><span class="nav-number">1.4.</span> <span class="nav-text">如何创建迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用迭代器"><span class="nav-number">1.5.</span> <span class="nav-text">使用迭代器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#序列"><span class="nav-number">1.5.1.</span> <span class="nav-text">序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典"><span class="nav-number">1.5.2.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件"><span class="nav-number">1.5.3.</span> <span class="nav-text">文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变对象和迭代器"><span class="nav-number">1.6.</span> <span class="nav-text">可变对象和迭代器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推导式"><span class="nav-number">2.</span> <span class="nav-text">推导式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表推导式"><span class="nav-number">2.1.</span> <span class="nav-text">列表推导式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典推导式"><span class="nav-number">2.2.</span> <span class="nav-text">字典推导式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合推导式"><span class="nav-number">2.3.</span> <span class="nav-text">集合推导式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器推导式"><span class="nav-number">2.4.</span> <span class="nav-text">生成器推导式</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1029,7 +983,7 @@ var jiathis_config={
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100830, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 100830, xid: "2018/02/04/Python内置数据类型/"});
+		_hcwp.push({widget:"Stream", widget_id: 100830, xid: "2018/02/11/Python迭代器和推导式/"});
 		
 
 		(function() {
