@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Hello World!">
 <meta property="og:description" content="序列成员有序排列的，并且可以通过下标 偏移量访问到它的一个或者几个成员，这类 Python 类型统称为序列。 包括下面这些：Python字符串，列表，和元组类型。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-12T02:05:52.629Z">
+<meta property="og:updated_time" content="2018-02-12T02:21:48.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 序列">
 <meta name="twitter:description" content="序列成员有序排列的，并且可以通过下标 偏移量访问到它的一个或者几个成员，这类 Python 类型统称为序列。 包括下面这些：Python字符串，列表，和元组类型。">
@@ -379,7 +379,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T10:05:52+08:00">2018-02-12</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T10:21:48+08:00">2018-02-12</time>
             
           </span>
 
@@ -639,6 +639,44 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="keyword">None</span>].extend(range(<span class="number">-1</span>, -len(s), <span class="number">-1</span>)):</span><br><span class="line"><span class="meta">... </span>	<span class="keyword">print</span> s[:i]</span><br><span class="line">...</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File "&lt;stdin&gt;", line 1, in ?</span><br><span class="line">TypeError: iteration over non-sequence</span><br></pre></td></tr></table></figure>
 <p>这个错误发生的原因是<code>[None].extend(…)</code>函数返回<code>None</code> ， <code>None</code> 既不是序列类型也不是 可迭代对象。</p>
 <p>这种情况下使用上面提到的的列表连接操作来实现是唯一不需要添加额外代码的 方法。</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>内建函数<code>list()</code>，<code>str()</code>和 <code>tuple()</code>被用做在各种序列类型之间转换。但是并没有进行任何的转换。</p>
+<p>这些转换实际上是工厂函数，将对象作为参数，并将其内容(浅)拷贝到新生成的对象中。</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>list(iter)</td>
+<td>把可迭代对象转换为列表</td>
+</tr>
+<tr>
+<td>str(obj)</td>
+<td>把 obj 对象转换成字符串(对象的字符串表示法)</td>
+</tr>
+<tr>
+<td>unicode(obj)</td>
+<td>把对象转换成 Unicode 字符串(使用默认编码)</td>
+</tr>
+<tr>
+<td>basestring()</td>
+<td>抽象工厂函数,其作用仅仅是为 str 和 unicode 函数提供父类，所以不能被实例化，也不能被调用</td>
+</tr>
+<tr>
+<td>tuple(iter)</td>
+<td>把一个可迭代对象转换成一个元组对象</td>
+</tr>
+</tbody>
+</table>
+<p>不过，为什么 Python 里面不简单地把一个对象转换成另 一个对象呢？</p>
+<blockquote>
+<p>一旦一个 Python 的对象被建立，我们就不能更改 其身份或类型了。如果你把一个列表对象传给 <code>list()</code>函数，便会创建这个对象的一个浅拷贝， 然后将其插入新的列表中。</p>
+<p>同样地，在做连接操作和重复操作时，也是这样处理的。</p>
+</blockquote>
+<p>所谓浅拷贝就是只拷贝了对对象的索引，而不是重新建立了一个对象！如果你想完全的拷 贝一个对象(包括递归，如果你的对象是一个包含在容器中的容器)，你需要用到深拷贝。</p>
 <h2 id="元组与列表"><a href="#元组与列表" class="headerlink" title="元组与列表"></a>元组与列表</h2><p>在许多地方都可以用元组代替列表，但元组的方法函数与列表相比要少一些，</p>
 <p>元组没有 <code>append()</code>、<code>insert(</code>)，等等，</p>
 <p>因为一旦创建元组便无法修改。既然列表更加灵活，那为 什么不在所有地方都使用列表呢?原因如下所示:</p>
@@ -942,7 +980,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序列"><span class="nav-number">1.</span> <span class="nav-text">序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-或list-创建列表"><span class="nav-number">2.</span> <span class="nav-text">使用[]或list()创建列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用list-将其他数据类型转换成列表"><span class="nav-number">3.</span> <span class="nav-text">使用list()将其他数据类型转换成列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-offset-获取元素"><span class="nav-number">4.</span> <span class="nav-text">使用[offset]获取元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包含列表的列表"><span class="nav-number">5.</span> <span class="nav-text">包含列表的列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-offset-修改元素"><span class="nav-number">6.</span> <span class="nav-text">使用[offset]修改元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定范围并使用切片提取元素"><span class="nav-number">7.</span> <span class="nav-text">指定范围并使用切片提取元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用append-添加元素至尾部"><span class="nav-number">8.</span> <span class="nav-text">使用append()添加元素至尾部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用extend-或-合并列表"><span class="nav-number">9.</span> <span class="nav-text">使用extend()或+=合并列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用insert-在指定位置插入元素"><span class="nav-number">10.</span> <span class="nav-text">使用insert()在指定位置插入元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用del删除指定位置的元素"><span class="nav-number">11.</span> <span class="nav-text">使用del删除指定位置的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用remove-删除具有指定值的元素"><span class="nav-number">12.</span> <span class="nav-text">使用remove()删除具有指定值的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用pop-获取并删除指定位置的元素"><span class="nav-number">13.</span> <span class="nav-text">使用pop()获取并删除指定位置的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用index-查询具有特定值的元素位置"><span class="nav-number">14.</span> <span class="nav-text">使用index()查询具有特定值的元素位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用in判断值是否存在"><span class="nav-number">15.</span> <span class="nav-text">使用in判断值是否存在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用count-记录特定值出现的次数"><span class="nav-number">16.</span> <span class="nav-text">使用count()记录特定值出现的次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用join-转换为字符串"><span class="nav-number">17.</span> <span class="nav-text">使用join()转换为字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用sort-重新排列元素"><span class="nav-number">18.</span> <span class="nav-text">使用sort()重新排列元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用len-获取长度"><span class="nav-number">19.</span> <span class="nav-text">使用len()获取长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-赋值，使用copy-复制"><span class="nav-number">20.</span> <span class="nav-text">使用=赋值，使用copy()复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-创建元组"><span class="nav-number">21.</span> <span class="nav-text">使用()创建元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与序列相关的内建函数sorted-，-reversed-，-enumerate-，zip"><span class="nav-number">22.</span> <span class="nav-text">与序列相关的内建函数sorted()， reversed()， enumerate()，zip()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列类型操作符"><span class="nav-number">23.</span> <span class="nav-text">序列类型操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#成员关系操作符-in-not-in"><span class="nav-number">23.1.</span> <span class="nav-text">成员关系操作符 in, not in</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接操作符"><span class="nav-number">23.2.</span> <span class="nav-text">连接操作符 +</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复操作符"><span class="nav-number">23.3.</span> <span class="nav-text">重复操作符 *</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切片操作符"><span class="nav-number">23.4.</span> <span class="nav-text">切片操作符 [], [:],[::]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用步长索引来进行扩展的切片操作"><span class="nav-number">23.5.</span> <span class="nav-text">用步长索引来进行扩展的切片操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组与列表"><span class="nav-number">24.</span> <span class="nav-text">元组与列表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序列"><span class="nav-number">1.</span> <span class="nav-text">序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-或list-创建列表"><span class="nav-number">2.</span> <span class="nav-text">使用[]或list()创建列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用list-将其他数据类型转换成列表"><span class="nav-number">3.</span> <span class="nav-text">使用list()将其他数据类型转换成列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-offset-获取元素"><span class="nav-number">4.</span> <span class="nav-text">使用[offset]获取元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包含列表的列表"><span class="nav-number">5.</span> <span class="nav-text">包含列表的列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-offset-修改元素"><span class="nav-number">6.</span> <span class="nav-text">使用[offset]修改元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定范围并使用切片提取元素"><span class="nav-number">7.</span> <span class="nav-text">指定范围并使用切片提取元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用append-添加元素至尾部"><span class="nav-number">8.</span> <span class="nav-text">使用append()添加元素至尾部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用extend-或-合并列表"><span class="nav-number">9.</span> <span class="nav-text">使用extend()或+=合并列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用insert-在指定位置插入元素"><span class="nav-number">10.</span> <span class="nav-text">使用insert()在指定位置插入元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用del删除指定位置的元素"><span class="nav-number">11.</span> <span class="nav-text">使用del删除指定位置的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用remove-删除具有指定值的元素"><span class="nav-number">12.</span> <span class="nav-text">使用remove()删除具有指定值的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用pop-获取并删除指定位置的元素"><span class="nav-number">13.</span> <span class="nav-text">使用pop()获取并删除指定位置的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用index-查询具有特定值的元素位置"><span class="nav-number">14.</span> <span class="nav-text">使用index()查询具有特定值的元素位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用in判断值是否存在"><span class="nav-number">15.</span> <span class="nav-text">使用in判断值是否存在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用count-记录特定值出现的次数"><span class="nav-number">16.</span> <span class="nav-text">使用count()记录特定值出现的次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用join-转换为字符串"><span class="nav-number">17.</span> <span class="nav-text">使用join()转换为字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用sort-重新排列元素"><span class="nav-number">18.</span> <span class="nav-text">使用sort()重新排列元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用len-获取长度"><span class="nav-number">19.</span> <span class="nav-text">使用len()获取长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-赋值，使用copy-复制"><span class="nav-number">20.</span> <span class="nav-text">使用=赋值，使用copy()复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-创建元组"><span class="nav-number">21.</span> <span class="nav-text">使用()创建元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与序列相关的内建函数sorted-，-reversed-，-enumerate-，zip"><span class="nav-number">22.</span> <span class="nav-text">与序列相关的内建函数sorted()， reversed()， enumerate()，zip()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列类型操作符"><span class="nav-number">23.</span> <span class="nav-text">序列类型操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#成员关系操作符-in-not-in"><span class="nav-number">23.1.</span> <span class="nav-text">成员关系操作符 in, not in</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接操作符"><span class="nav-number">23.2.</span> <span class="nav-text">连接操作符 +</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复操作符"><span class="nav-number">23.3.</span> <span class="nav-text">重复操作符 *</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切片操作符"><span class="nav-number">23.4.</span> <span class="nav-text">切片操作符 [], [:],[::]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用步长索引来进行扩展的切片操作"><span class="nav-number">23.5.</span> <span class="nav-text">用步长索引来进行扩展的切片操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">24.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组与列表"><span class="nav-number">25.</span> <span class="nav-text">元组与列表</span></a></li></ol></div>
             
 
           </div>
