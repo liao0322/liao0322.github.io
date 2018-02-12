@@ -381,7 +381,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T11:46:30+08:00">2018-02-12</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T14:31:17+08:00">2018-02-12</time>
             
           </span>
 
@@ -455,20 +455,16 @@
 
       
         
-          
-            <p><code>None</code> 是 Python 中一个特殊的值，虽然它不表示任何数据，但仍然具有重要的作用。 </p>
+          <p><code>None</code> 是 Python 中一个特殊的值，虽然它不表示任何数据，但仍然具有重要的作用。 </p>
 <p>虽然 <code>None</code> 作为布尔值和 <code>False</code> 是一样的，但是它和 <code>False</code> 有很多差别。下面是一个 例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>thing = <span class="keyword">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> thing:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's some thing"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's no thing"</span>)</span><br><span class="line">...</span><br><span class="line">It<span class="string">'s no thing</span></span><br></pre></td></tr></table></figure>
-<p>为了区分 <code>None</code> 和布尔值 <code>False</code> , 使用 Python 的 <code>is</code> 操作符:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">if</span> thing <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's nothing"</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">"It's something"</span>)</span><br><span class="line">...</span><br><span class="line">It<span class="string">'s nothing</span></span><br></pre></td></tr></table></figure>
-<p>这虽然是一个微妙的区别，但是对于 Python 来说是很重要的。</p>
-<p>你需要把 <code>None</code> 和不含 任何值的空数据结构区分开来。<code>0</code> 值的整型 / 浮点型、空字符串<code>&#39;&#39;</code>、空列表<code>[]</code>、 空元组<code>(,)</code>、空字典<code>{}</code>、空集合<code>set()</code>都等价于 <code>False</code>，但是不等于 None。</p>
-<p>定义一个函数，输出它的参数是否是 <code>None</code>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_none</span><span class="params">(thing)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> thing <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">    	print(<span class="string">"It's None"</span>)</span><br><span class="line">	<span class="keyword">elif</span> thing:</span><br><span class="line">    	print(<span class="string">"It's True"</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">    	print(<span class="string">"It's False"</span>)</span><br></pre></td></tr></table></figure>
-<p>测试：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(<span class="keyword">None</span>)</span><br><span class="line">It<span class="string">'s None</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(True)</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(<span class="keyword">False</span>)</span><br><span class="line">It<span class="string">'s False</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(0)</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(<span class="number">0.0</span>)</span><br><span class="line">It<span class="string">'s False</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(())</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none([])</span><br><span class="line">It<span class="string">'s False</span></span><br><span class="line"><span class="string">&gt;&gt;&gt; is_none(&#123;&#125;)</span></span><br><span class="line"><span class="string">It'</span>s <span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>is_none(set())</span><br><span class="line">It<span class="string">'s False</span></span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/12/PythonNone/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
