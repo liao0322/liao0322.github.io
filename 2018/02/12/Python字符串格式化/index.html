@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Hello World!">
 <meta property="og:description" content="Python 有两种格式化字符串的方式，我们习惯简单地称之为旧式(old style)和新式(new style)。这两种方式在 Python 2 和 Python 3 中都适用(新式格式化方法适用于 Python 2.6 及 以上)。 使用%的旧式格式化旧式格式化的形式为 string % data。其中 string 包含的是待插值的序列。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-12T08:56:09.910Z">
+<meta property="og:updated_time" content="2018-02-12T09:07:06.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 字符串格式化">
 <meta name="twitter:description" content="Python 有两种格式化字符串的方式，我们习惯简单地称之为旧式(old style)和新式(new style)。这两种方式在 Python 2 和 Python 3 中都适用(新式格式化方法适用于 Python 2.6 及 以上)。 使用%的旧式格式化旧式格式化的形式为 string % data。其中 string 包含的是待插值的序列。">
@@ -379,7 +379,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T16:56:09+08:00">2018-02-12</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T17:07:06+08:00">2018-02-12</time>
             
           </span>
 
@@ -550,18 +550,38 @@
 <h2 id="使用-和format的新式格式化"><a href="#使用-和format的新式格式化" class="headerlink" title="使用{}和format的新式格式化"></a>使用<code>{}</code>和<code>format</code>的新式格式化</h2><p>如果你在使用 Python 3，新式格式化更值得推荐。</p>
 <p>新式格式化最简单的用法如下所示:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;&#125; &#123;&#125; &#123;&#125;'</span>.format(n, f, s) </span><br><span class="line"><span class="string">'42 7.03 string cheese'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>旧式格式化中传入参数的顺序需要与 % 占位符出现的顺序完全一致，</p>
+<p>但在新式格式化里， 可以自己指定插入的顺序:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;2&#125; &#123;0&#125; &#123;1&#125;'</span>.format(f, s, n) </span><br><span class="line"><span class="string">'42 7.03 string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>0 代表第一个参数 f;</p>
+<p>1 代表字符串 s;</p>
+<p>2 代表最后一个参数，整数 n。</p>
+<p>参数可以是字典或者命名变量，格式串中的标识符可以引用这些名称:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;n&#125; &#123;f&#125; &#123;s&#125;'</span>.format(n=<span class="number">42</span>, f=<span class="number">7.03</span>, s=<span class="string">'string cheese'</span>) </span><br><span class="line"><span class="string">'42 7.03 string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>下面的例子中，我们试着将之前作为参数的 3 个值存到一个字典中，如下所示:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'n'</span>: <span class="number">42</span>, <span class="string">'f'</span>: <span class="number">7.03</span>, <span class="string">'s'</span>: <span class="string">'string cheese'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>下面的例子中，{0} 代表整个字典，{1} 则代表字典后面的字符串 ‘other’:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0[n]&#125; &#123;0[f]&#125; &#123;0[s]&#125; &#123;1&#125;'</span>.format(d, <span class="string">'other'</span>)</span><br><span class="line"><span class="string">'42 7.03 string cheese other'</span></span><br></pre></td></tr></table></figure>
+<p>上面这些例子都是以默认格式打印结果的。</p>
+<p>旧式格式化允许在 % 后指定参数格式，但在新式格式化里，将这些格式标识符放在 <code>:</code> 后。首先使用位置参数的例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0:d&#125; &#123;1:f&#125; &#123;2:s&#125;'</span>.format(n, f, s)</span><br><span class="line"><span class="string">'42 7.030000 string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>接着使用相同的值，但这次它们作为命名参数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;n:d&#125; &#123;f:f&#125; &#123;s:s&#125;'</span>.format(n=<span class="number">42</span>, f=<span class="number">7.03</span>, s=<span class="string">'string cheese'</span>) </span><br><span class="line"><span class="string">'42 7.030000 string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>新式格式化也支持其他各类设置(最小域宽、最大字符宽、排版，等等)。 </p>
+<p>下面是一个最小域宽设为 10、右对齐(默认)的例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0:10d&#125; &#123;1:10f&#125; &#123;2:10s&#125;'</span>.format(n, f, s) </span><br><span class="line"><span class="string">'        42   7.030000 string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>与上面例子一样，但使用 <code>&gt;</code> 字符设定右对齐显然要更为直观:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0:&gt;10d&#125; &#123;1:&gt;10f&#125; &#123;2:&gt;10s&#125;'</span>.format(n, f, s)</span><br><span class="line"><span class="string">'        42   7.030000 string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>最小域宽为 10，左对齐:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0:&lt;10d&#125; &#123;1:&lt;10f&#125; &#123;2:&lt;10s&#125;'</span>.format(n, f, s)</span><br><span class="line"><span class="string">'42         7.030000   string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>最小域宽为 10，居中:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0:^10d&#125; &#123;1:^10f&#125; &#123;2:^10s&#125;'</span>.format(n, f, s)</span><br><span class="line"><span class="string">'    42      7.030000  string cheese'</span></span><br></pre></td></tr></table></figure>
+<p>新式格式化与旧式格式化相比有一处明显的不同：精度(precision，小数点后面的数字) </p>
+<p>对于浮点数而言仍然代表着小数点后的数字个数，</p>
+<p>对于字符串而言则代表着最大字符个 数，但在新式格式化中你无法对整数设定精度:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0:&gt;10.4d&#125; &#123;1:&gt;10.4f&#125; &#123;2:10.4s&#125;'</span>.format(n, f, s) </span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: Precision <span class="keyword">not</span> allowed <span class="keyword">in</span> integer format specifier</span><br></pre></td></tr></table></figure>
+<p>最后一个可设定的值是填充字符。如果想要使用空格以外的字符进行填充，只需把它放 在 <code>:</code>之后，其余任何排版符（&lt;、&gt;、^）和宽度标识符之前即可:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0:!^20s&#125;'</span>.format(<span class="string">'BIG SALE'</span>) </span><br><span class="line"><span class="string">'!!!!!!BIG SALE!!!!!!'</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
