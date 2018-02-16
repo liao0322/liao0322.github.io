@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Hello World!">
 <meta property="og:description" content="Python 有两种格式化字符串的方式，我们习惯简单地称之为旧式(old style)和新式(new style)。这两种方式在 Python 2 和 Python 3 中都适用(新式格式化方法适用于 Python 2.6 及 以上)。 使用%的旧式格式化旧式格式化的形式为 string % data。其中 string 包含的是待插值的序列。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-12T10:00:00.702Z">
+<meta property="og:updated_time" content="2018-02-16T06:37:35.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 字符串格式化">
 <meta name="twitter:description" content="Python 有两种格式化字符串的方式，我们习惯简单地称之为旧式(old style)和新式(new style)。这两种方式在 Python 2 和 Python 3 中都适用(新式格式化方法适用于 Python 2.6 及 以上)。 使用%的旧式格式化旧式格式化的形式为 string % data。其中 string 包含的是待插值的序列。">
@@ -379,7 +379,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-02-12T18:00:00+08:00">2018-02-12</time>
+              <time title="更新于" itemprop="dateModified" datetime="2018-02-16T14:37:35+08:00">2018-02-16</time>
             
           </span>
 
@@ -487,27 +487,27 @@
 <tbody>
 <tr>
 <td>%s</td>
-<td>字符串</td>
+<td>优先用 <code>str()</code>函数进行字符串转换</td>
 </tr>
 <tr>
-<td>%d</td>
-<td>十进制整数</td>
+<td>%d或%i</td>
+<td>转成有符号十进制整数</td>
 </tr>
 <tr>
-<td>%x</td>
-<td>十六进制整数</td>
+<td>%x或%X</td>
+<td>（Unsigned）转成无符号十六进制数（x/X 代表转换后的十六进制字符的大小写）</td>
 </tr>
 <tr>
 <td>%o</td>
-<td>八进制整数</td>
+<td>转成无符号八进制数</td>
 </tr>
 <tr>
-<td>%f</td>
-<td>十进制浮点数</td>
+<td>%f或%F</td>
+<td>转成十进制浮点数</td>
 </tr>
 <tr>
-<td>%e</td>
-<td>以科学计数法表示的浮点数</td>
+<td>%e或%E</td>
+<td>转成科学计数法</td>
 </tr>
 <tr>
 <td>%g</td>
@@ -516,6 +516,18 @@
 <tr>
 <td>%%</td>
 <td>文本值%本身</td>
+</tr>
+<tr>
+<td>%r</td>
+<td>优先用 <code>repr()</code>函数进行字符串转换</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>整数：将数字转换成其unicode对应的值，10进制范围为 0 &lt;= i &lt;= 1114111（py27则只支持0-255）；字符：将字符添加到指定位置</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>转成无符号十进制数</td>
 </tr>
 </tbody>
 </table>
